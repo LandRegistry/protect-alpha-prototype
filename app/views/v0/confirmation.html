@@ -1,10 +1,22 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Confirmation page example
+  Confirmation
 {% endblock %}
 
 {% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}
