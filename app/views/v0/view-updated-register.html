@@ -1,0 +1,42 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Start page example
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Home",
+        "href": "#"
+      },
+      {
+        "text": "HMLR Citizen Services",
+        "href": "#"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        View updated register
+      </h1>
+
+      <p>Display the relevant parts of the updated register</p>
+
+      <p><a href="start">Back home</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}
