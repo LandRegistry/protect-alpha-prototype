@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Contact information
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Contact info
+      </h1>
+
+      <p>If user is verified, this is where we display the contents of the matching data on B1 of the register. Users will be able to select the data to update or add new contact details.</p>
+
+      <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8" href="confirm-changes" role="button">Continue</a>
+
+    </div>
+
+  </div>
+{% endblock %}

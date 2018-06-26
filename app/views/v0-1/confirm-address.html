@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm address
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check and confirm
+      </h1>
+      <h2 class="govuk-heading-m">
+          Confirm your address
+      </h2>
+      <p class="govuk-body govuk-!-font-weight-bold">{{ data['address-selector'] }}</p>
+      <a href="verification" type="submit" class="govuk-button">Continue</a>
+      <p><a href="address-lookup">Search again</a></p>
+    </div>
+
+  </div>
+{% endblock %}

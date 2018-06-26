@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verification
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Verification
+      </h1>
+
+      <p>This is the placeholder for verification service pages (e.g. Verify)</p>
+
+      <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8" href="contact-info" role="button">Continue</a>
+
+    </div>
+
+  </div>
+{% endblock %}
