@@ -3,6 +3,27 @@
     display: none;
 }
 
+/* Inline link */
 .govuk-custom-inline-link {
     margin-left: 0.5em;
+}
+
+/* definition lists */
+.govuk-custom-definition-list {
+    & dt {
+        font-weight: bold;
+    }
+    & dd {
+        -webkit-margin-start: 0;
+        -moz-margin-start: 0;
+        -ms-margin-start: 0;
+        margin-start: 0;
+        margin-bottom: 1em;
+    }
+}
+
+/* Contact details display */
+.govuk-custom-contact-display-body {
+    display: flex;
+    justify-content: space-between;
 }

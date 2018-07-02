@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm changes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Check and confirm
+    </h1>
+    <dl class="app-check-your-answers app-check-your-answers--short">
+      <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+          Address
+          </dt>
+          <dd class="app-check-your-answers__answer">
+              {{ data['add-email'] }}
+          </dd>
+          <dd class="app-check-your-answers__change">
+              <a href="address-change">
+                  Change<span class="govuk-visually-hidden"> email</span>
+              </a>
+          </dd>
+      </div>
+     </dl>
+    <a href="confirmation" type="submit" class="govuk-button">Confirm</a>
+  </div>
+
+</div>
+{% endblock %}
