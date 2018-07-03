@@ -23,7 +23,8 @@
 }
 
 /* Contact details display */
-.govuk-custom-contact-display-body {
+.govuk-custom-contact-display-body div {
     display: flex;
     justify-content: space-between;
+    padding-top: 1em;
 }

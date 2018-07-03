@@ -9,3 +9,8 @@ $('.govuk-custom-revert-state').bind('click', function() {
     $('.govuk-custom-element-to-hide, .govuk-custom-element-to-display').toggle();
     return false;
 });
+
+$('#add-button').bind('click', function() {
+    sessionStorage.setItem('addOrChange', 'add');
+});
+

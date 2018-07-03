@@ -30,10 +30,10 @@
     <dl class="app-check-your-answers app-check-your-answers--short">
       <div class="app-check-your-answers__contents">
           <dt class="app-check-your-answers__question">
-          Address
+          Email
           </dt>
           <dd class="app-check-your-answers__answer">
-              {{ data['add-email'] }}
+              {{ data['added-item'] }}
           </dd>
           <dd class="app-check-your-answers__change">
               <a href="address-change">
@@ -42,8 +42,9 @@
           </dd>
       </div>
      </dl>
-    <a href="confirmation" type="submit" class="govuk-button">Confirm</a>
+    <a href="confirmation_added" type="submit" class="govuk-button" id="email-change-button">Confirm</a>
   </div>
 
 </div>
 {% endblock %}
+
