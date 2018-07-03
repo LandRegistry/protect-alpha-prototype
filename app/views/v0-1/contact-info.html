@@ -24,24 +24,26 @@
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 
-      <h1 class="govuk-heading-xl">
-        Contact details
+      <h1 class="govuk-heading-l">
+        Confirm your contact details
       </h1>
-      <p class="govuk-body">Below are the contact details for the property you searched for, Review and edit where necessary.</p>
+      
+      <p class="govuk-body">These are the contact details for <span class="govuk-!-font-weight-bold">{{ data['address-selector'] }}</span>.</p>
+      <p>We will use these to contact you, for example if we suspect fraud on your property.</p>
 
       <h2 class="govuk-heading-s">
-          Contact 1
+          Contact details
       </h2>
       <div class="govuk-custom-contact-display-body">
+       <!--<p><span class="govuk-!-font-size-16 govuk-!-font-weight-bold"><img src="/public/images/icon-information.png"> This is the contact information on the open register</span> <span class="govuk-!-font-size-14"><a href="/">What is this?</a></span></p> --><br>
         <div>
-          <p class="govuk-!-font-size-24">{{ data['address-selector'] }}</p>
+          <p class="govuk-!-font-size-24">{{ data['address-selector'] }}<br><span class="govuk-!-font-size-16 govuk-!-font-weight-bold"><img src="/public/images/icon-information.png"> This is on the open register</span> <span class="govuk-!-font-size-14"><a href="/">What is this?</a></span></p>
           <p class="govuk-custom-contact-display-change-link"><a href="change-contact">Change</a></p>
         </div>
+        <p><a href="add-new-contact">Add a new contact</a></p>
       </div>
-      <p><a href="add-new-contact" class="govuk-button govuk-!-margin-top-4">Add new contact</a></p>
-      
-      <p class="govuk-body"><a href="start">I don't want to change anything</a></p>
-      <p class="govuk-body"><a href="start">Find another property</a></p>
+      <p><a href="add-new-contact" class="govuk-button govuk-!-margin-top-4">Confirm</a></p>
+      <p class="govuk-body"><a href="address-lookup">Find another property</a></p>
 
     </div>
 

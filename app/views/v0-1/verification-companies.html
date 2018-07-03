@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verification
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-custom-verify-box">
+        <div class="govuk-custom-verify-box-item govuk-custom-verify-icon">
+            <img src="/public/images/govuk-verify-logo.png">
+        </div>
+        <div class="govuk-custom-verify-box-item govuk-custom-verify-blurb">
+          <p>A certified company will verify your identity. They've all met security standards set by government.</p>
+          <p>You don't need to be an existing customer with a company as they've built new, secure systems to verify identities.</p>
+
+          <p>There is no charge for this service.</p>
+          <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-verify-button" href="verification-sign-in" role="button">Next</a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}
