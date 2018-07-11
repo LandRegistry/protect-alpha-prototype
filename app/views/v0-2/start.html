@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Protect my property start page
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        {% if serviceName %} {{ serviceName }} {% endif %}
+      </h1>
+
+      <p>Use this service to add or change your contact details on the title register (register of property owners and their land). HM Land Registry will use these details to warn you by email or letter if there is property fraud on your home.</p>
+
+      <a class="govuk-button govuk-button--start govuk-!-margin-top-2 govuk-!-margin-bottom-8" href="address-lookup" role="button">Start now</a>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third">
+
+      <aside class="app-related-items" role="complementary">
+        <h2 class="govuk-heading-m" id="subsection-title">
+          Subsection
+        </h2>
+        <p>We can add related content here, for example links to other citizen services.</p>
+        <nav role="navigation" aria-labelledby="subsection-title">
+          <ul class="govuk-list govuk-body-s">
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#">
+                Related link
+              </a>
+            </li>
+            <li>
+              <a href="#" class="govuk-!-font-weight-bold">
+                More <span class="visuallyhidden">in Subsection</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+    </div>
+  </div>
+{% endblock %}

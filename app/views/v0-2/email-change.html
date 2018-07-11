@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Change email
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+      <form class="form" action="confirm-email-change" method="post">
+
+        <fieldset="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                  Change email
+                </h1>
+          </legend>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="email-change">
+              Email
+            </label>
+            <input class="govuk-input" id="email-change" name="email-change">
+          </div>
+          <div class="govuk-form-group">
+            <div class="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="private-email" name="private-email" type="checkbox">
+                <label class="govuk-label govuk-checkboxes__label" for "private-email">Make this private</label>
+              </div>
+            </div>
+
+          </div>
+
+        </fieldset>
+
+        <input class="govuk-button" type="submit" value="Continue">
+
+      </form>
+      
+    </div>
+
+  </div>
+{% endblock %}

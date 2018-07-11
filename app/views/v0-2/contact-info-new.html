@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Contact information
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your contact details
+      </h1>
+      
+      <table class="govuk-table govuk-custom-contact-info-table_v1">
+          <caption class="govuk-table__caption govuk-!-font-size-24">
+              Contact details
+              <details class="govuk-details">
+                    <summary class="govuk-details__summary">
+                        <span class="govuk-details__summary-text">
+                        What is this?
+                        </span>
+                    </summary>
+                    <div class="govuk-details__text">
+                        <p>BLURB ABOUT WHAT THIS IS USED FOR</p>
+                    </div>
+                  </details>
+            </caption>
+          
+          <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col"></th>
+                  <th class="govuk-table__header" scope="col"></th>
+              </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell last_row">
+                      {{ data['address-selector'] }}<br>
+                  </td>
+                  <td class="govuk-table__cell last_row" style="text-align:right">
+                    <!-- <a href="change-contact govuk-!-margin-top-2 govuk-!-margin-bottom-0" class="govuk-button">Change</a> -->
+                  </td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell last_row">
+                      email@email.com<br>
+                  </td>
+                  <td class="govuk-table__cell last_row" style="text-align:right">
+                    <!-- <a href="change-contact" class="govuk-button">Change</a> <a href="#" class="govuk-button govuk-custom-delete-button">Delete</a> -->
+                  </td>
+              </tr>
+              
+          </tbody>
+          
+
+      </table>
+      <p><a href="#" class="govuk-button">Update details</a></p>
+      <h2 class="govuk-heading-m">
+        No changes required?
+      </h2>
+      <p><a href="https://gov.uk">Exit the service</a> (your contact details will not change)<br>or<br><a href="address-lookup">Find another property</a></p>
+    </div>
+
+  </div>
+{% endblock %}

@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm address
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Confirm your address
+      </h1>
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">{{ data['address-selector'] }}</p>
+      <p>Once you have confirmed your address, we will take you to Verify (a government service).</p>
+      <p>Verify will ask you for identification, so we know you are the title holder (owner) of this property.</p>
+      <a href="verification-sign-in" type="submit" class="govuk-button">Confirm and continue</a>
+      <p><a href="address-lookup">Search again</a></p>
+    </div>
+
+  </div>
+{% endblock %}

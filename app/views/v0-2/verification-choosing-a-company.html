@@ -1,0 +1,41 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  About choosing a company
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Finding the right company to verify you
+      </h1>
+      <p class="govuk-body">Certified companies have built new, secure systems to verify identities. These systems work by checking:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>your identity documents are valid</li>
+          <li>it's you providing your details, and not someone else pretending to be you</li>
+      </ul>
+      <p>However, each company uses different methods for each of these steps.</p>
+      <p>So we'll now ask you some questions to check which companies can verify you. We'll then send you to the website of the company you choose.</p>
+      <a href="verification-photo-identity-document" type="submit" class="govuk-button">Continue</a>
+    </div>
+
+  </div>
+{% endblock %}

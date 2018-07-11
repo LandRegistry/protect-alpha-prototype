@@ -34,8 +34,9 @@
 .govuk-custom-contact-display-body div {
     display: flex;
     justify-content: space-between;
-    /*padding-top: 1em;*/
+    padding-top: 1em;
     border-bottom: 1px solid #bfc1c3;
+    border-top: 1px solid #bfc1c3;
 
     &.govuk-custom-changed-or-added {
         height: 4em;
@@ -49,6 +50,37 @@
 
 .govuk-custom-contact-display-item__added {
     padding-top: 2em;
+}
+
+/* v1 */
+
+.govuk-custom-definition-list details {
+    margin-bottom: 0.5em;
+
+    & summary:before {
+        font-size: 16px !important;
+    }
+}
+
+.govuk-custom-contact-info-table_v1 details {
+    margin-bottom: -1em !important;
+    font-size: 16px !important;
+
+    & summary:before {
+        font-size: 16px !important;
+    }
+}
+
+.govuk-custom-contact-info-table_v1 .govuk-button {
+    margin-bottom: 0;
+}
+
+.govuk-custom-delete-button {
+    background-color: #b10e1e;
+
+    &:hover {
+        background-color: darken(#b10e1e, 5%) !important;
+    }
 }
 
 /* Verify mockup */

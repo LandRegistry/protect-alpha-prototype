@@ -1,0 +1,52 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Contact information
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Check your contact details
+      </h1>
+      
+      <p class="govuk-body">These are the contact details for<br><span class="govuk-!-font-weight-bold">{{ data['address-selector'] }}</span></p>
+      <p>We will use these to contact you, for example if we suspect fraud on your property.</p>
+
+      <h2 class="govuk-heading-m">
+          Contact details
+      </h2>
+      <div class="govuk-custom-contact-display-body">
+       <!--<p><span class="govuk-!-font-size-16 govuk-!-font-weight-bold"><img src="/public/images/icon-information.png"> This is the contact information on the open register</span> <span class="govuk-!-font-size-14"><a href="/">What is this?</a></span></p> --><br>
+        <div>
+          <p>{{ data['address-selector'] }}<br><span class="govuk-!-font-size-16 govuk-!-font-weight-bold"><img src="/public/images/icon-information.png"> This is on the open register</span> <span class="govuk-!-font-size-14"><a href="/">What is this?</a></span></p>
+        </div>
+        <p class="govuk-custom-contact-display-change-link govuk-!-font-size-16"><a href="update-contact" class="govuk-button">Update details</a></p>
+      </div>
+      <h2 class="govuk-heading-m">
+        No changes required?
+      </h2>
+      <p><a href="address-lookup">Find another property</a> or <a href="https://gov.uk">exit the service</a> (your contact details will not change).</p>
+
+    </div>
+
+  </div>
+{% endblock %}

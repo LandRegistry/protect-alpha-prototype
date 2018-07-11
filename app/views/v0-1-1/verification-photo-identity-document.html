@@ -1,0 +1,102 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your photo identity document
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Your photo identity document
+      </h1>
+      <p class="govuk-body">Certified companies use information from identity documents to verify you.</p>
+      <div class="govuk-inset-text">
+        The more identity documents you can provide now, the more likely it is that the company can verify you successfully.
+      </div>
+      <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you have a valid UK photocard driving licence, full or provisional?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="driving-licence-yes" name="drivingLicence" type="radio" value="Yes" data-aria-controls="conditional-where-driving-licence-issued">
+                  <label class="govuk-label govuk-radios__label" for="driving-licence-yes">
+                    Yes
+                  </label>
+                </div>
+                
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="driving-licence-yes" name="drivingLicence" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="driving-licence-yes">
+                    No
+                  </label>
+                </div>
+                <div class="govuk-radios__conditional" id="conditional-where-driving-licence-issued">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="driving-licence-yes">
+                        Where was your driving licence issued?
+                    </label>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="issued-gb" name="whereIssued" type="radio" value="Great Britain">
+                        <label class="govuk-label govuk-radios__label" for="issued-gb">
+                            Great Britain
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="issued-ni" name="whereIssued" type="radio" value="Northern Ireland">
+                        <label class="govuk-label govuk-radios__label" for="issued-ni">
+                            Northern Ireland
+                        </label>
+                    </div>
+                </div>
+          
+              </div>
+            </fieldset>
+            <fielset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you have a UK passport?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-passport-yes" name="ukPassport" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="uk-passport-yes">
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="uk-passport-no" name="ukPassport" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="uk-passport-no">
+                    No
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+      <a href="verification-choose-a-verification-company" type="submit" class="govuk-button">Continue</a>
+    </div>
+
+  </div>
+{% endblock %}

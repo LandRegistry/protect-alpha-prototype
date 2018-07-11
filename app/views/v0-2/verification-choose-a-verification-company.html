@@ -1,0 +1,105 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Your photo identity document
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Choose a company to verify your identity
+      </h1>
+      <p class="govuk-body">You don't have to be an existing customer with a company.</p>
+      <p>They ask you to provide personal information and evidence, and then check it's correct using the new. secure systems they built.</p>
+      <ul class="govuk-lists govuk-list--bullet">
+          <li><a href="#">Why there's a choice of companies</a></li>
+      </ul>
+      <p>Based on your answers, 7 companies can verify you now:</p>
+      <div class="govuk-custom-verification-companies__block">
+          <div class="govuk-custom-verification-companies__block-item">
+              <div>
+                  <img src="/public/images/barclays-logo.png">
+                  <p><a href="#">About Barclays</a></p>
+              </div>
+              <div>
+                  <a href="contact-info" type="submit" class="govuk-button">Choose Barclays</a>
+              </div>
+          </div>
+          <div class="govuk-custom-verification-companies__block-item">
+              <div>
+                  <img src="/public/images/digidentity-logo.png">
+                  <p><a href="#">About Digidentity</a></p>
+              </div>
+              <div>
+                  <a href="contact-info" type="submit" class="govuk-button">Choose Digidentity</a>
+              </div>
+          </div>
+          <div class="govuk-custom-verification-companies__block-item">
+              <div>
+                  <img src="/public/images/experian-logo.png">
+                  <p><a href="#">About Experian</a></p>
+              </div>
+              <div>
+                  <a href="contact-info" type="submit" class="govuk-button">Choose Experian</a>
+              </div>
+          </div>
+          <div class="govuk-custom-verification-companies__block-item">
+              <div>
+                  <img src="/public/images/secureidentity-logo.png">
+                  <p><a href="#">About SecureIdentity</a></p>
+              </div>
+              <div>
+                  <a href="contact-info" type="submit" class="govuk-button">Choose SecureIdentity</a>
+              </div>
+          </div>
+          <div class="govuk-custom-verification-companies__block-item">
+              <div>
+                  <img src="/public/images/citizensafe-logo.png">
+                  <p><a href="#">About CitizenSafe</a></p>
+              </div>
+              <div>
+                  <a href="contact-info" type="submit" class="govuk-button">Choose CitizenSafe</a>
+              </div>
+          </div>
+          <div class="govuk-custom-verification-companies__block-item">
+              <div>
+                  <img src="/public/images/royal-mail-logo.png">
+                  <p><a href="#">About Royal Mail</a></p>
+              </div>
+              <div>
+                  <a href="contact-info" type="submit" class="govuk-button">Choose Royal Mail</a>
+              </div>
+          </div>
+          <div class="govuk-custom-verification-companies__block-item">
+              <div>
+                  <img src="/public/images/post-office-logo.png">
+                  <p><a href="#">About Post Office</a></p>
+              </div>
+              <div>
+                  <a href="contact-info" type="submit" class="govuk-button">Choose Post Office</a>
+              </div>
+          </div>
+      </div>
+      
+    </div>
+
+  </div>
+{% endblock %}

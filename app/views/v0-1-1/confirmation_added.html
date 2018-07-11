@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "#"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h2 class="govuk-panel__title">
+        Contact details updated
+      </h2>
+      <div class="govuk-panel__body">
+        Your reference number<br><strong>ABC123</strong>
+      </div>
+    </div>
+
+    <p>
+      We have sent you a confirmation email.
+    </p>
+
+    <p><a href="contact-info_added">View updated contact details</a></p>
+    <p><a href="view-updated-register">View the updated register</a></p>
+
+
+  </div>
+</div>
+{% endblock %}
