@@ -51,7 +51,10 @@ router.get('/*/update-contact-2-what', function (req, res) {
   if (toDo === 'add') {
     // Redirect to the relevant page
     res.redirect('add-new-contact-2')
-  } else {
+  } else if (toDo === 'delete') {
+    res.redirect('delete-contact-2')
+  }  
+  else {
     res.render('v0-2/update-contact-2-what')
   }
 })

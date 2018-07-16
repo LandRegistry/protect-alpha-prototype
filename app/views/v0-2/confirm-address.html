@@ -27,7 +27,29 @@
       <h1 class="govuk-heading-l">
         Your property address is
       </h1>
-      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">{{ data['address-selector'] }}</p>
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">
+        {% if data['address-selector'] !== undefined %}
+          {{ data['address-selector'] }}
+        {% else %}
+          {% if (data['address-line-1']) %}
+            {{ data['address-line-1'] }},
+          {% endif %}
+          {% if (data['address-line-2']) %}
+            {{ data['address-line-2'] }},
+          {% endif %}
+          {% if (data['address-town']) %}
+            {{ data['address-town'] }},
+          {% endif %}
+          {% if (data['address-county']) %}
+            {{ data['address-county'] }},
+          {% endif %}
+          {% if (data['address-postcode']) %}
+            {{ data['address-postcode'] }},
+          {% endif %}
+        {% endif %}
+
+      
+      </p>
       <p>Once you have confirmed your property, we will ask you to prove that you are the owner.</p>
       <p>You will need 3 of the following documents to prove your identity as the property owner:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -36,7 +58,7 @@
         <li>National insurance number</li>
       </ul>
       <a href="verification-sign-in" type="submit" class="govuk-button" id="govuk-custom-single-address-button">Confirm and continue</a>
-      <h2 class="govuk-heading-m">Have another title to search?</h2>
+      <h2 class="govuk-heading-m">Want to add another property?</h2>
       <p>You can <a href="address-lookup-2">search for another address</a></p>
       <p>or</p>
       <p><a href="title-number-entry">Search by title number</a></p>

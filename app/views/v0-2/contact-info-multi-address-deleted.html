@@ -47,57 +47,13 @@
           </thead>
           <tbody class="govuk-table__body"  style="vertical-align:top">
               <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                      {% if (data['address-selector'] !== undefined) %}
-                        {{ data['address-selector'] }}
-                      {% elif (data['titleNumber'] !== undefined) %}
-                        1 Clinton Streer, Exeter EX4 1AX
-                      {% else %}
-                        {% if (data['address-line-1']) %}
-                          {{ data['address-line-1'] }},
-                        {% endif %}
-                        {% if (data['address-line-2']) %}
-                          {{ data['address-line-2'] }},
-                        {% endif %}
-                        {% if (data['address-town']) %}
-                          {{ data['address-town'] }},
-                        {% endif %}
-                        {% if (data['address-county']) %}
-                          {{ data['address-county'] }},
-                        {% endif %}
-                        {% if (data['address-postcode']) %}
-                          {{ data['address-postcode'] }},
-                        {% endif %}
-                      {% endif %}
-                  </td>
+                  <td class="govuk-table__cell">{{ data['address-selector'] }}</td>
                   <td class="govuk-table__cell">1 Clinton Street, Exeter EX4 1AX</td>
                   <td class="govuk-table__cell"><a href="update-contact" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-first-property-button">Update</a></td>
               </tr>
               <tr class="govuk-table__row">
-                  <td class="govuk-table__cell">
-                      {% if (data['address-selector-2'] !== undefined) %}
-                        {{ data['address-selector-2'] }}
-                      {% elif (data['titleNumber-2'] !== undefined) %}
-                        3 Clinton Streer, Exeter EX4 1AX
-                      {% else %}
-                        {% if (data['address-line-1-2']) %}
-                          {{ data['address-line-1-2'] }},
-                        {% endif %}
-                        {% if (data['address-line-2-2']) %}
-                          {{ data['address-line-2-2'] }},
-                        {% endif %}
-                        {% if (data['address-town-2']) %}
-                          {{ data['address-town-2'] }},
-                        {% endif %}
-                        {% if (data['address-county-2']) %}
-                          {{ data['address-county-2'] }},
-                        {% endif %}
-                        {% if (data['address-postcode-2']) %}
-                          {{ data['address-postcode-2'] }},
-                        {% endif %}
-                      {% endif %}
-                  </td>
-                  <td class="govuk-table__cell">1 Clinton Street, Exeter EX4 1AX<br>email@email.com</td>
+                  <td class="govuk-table__cell">{{ data['address-selector-2'] }}</td>
+                  <td class="govuk-table__cell">1 Clinton Street, Exeter EX4 1AX</td>
                   <td class="govuk-table__cell"><a href="update-contact-2" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-second-property-button">Update</a></td>
               </tr>
           </tbody>

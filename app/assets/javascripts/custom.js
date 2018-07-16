@@ -32,4 +32,8 @@ $('#govuk-custom-multi-address-button').bind('click', function() {
 
 $('.govuk-custom-update-single-property-button').bind('click', function() {
     sessionStorage.setItem('propNumber', 'single');
-})
+});
+
+$('#govuk-custom-manual-address-entry-button').bind('click', function() {
+    sessionStorage.setItem('manualAddress', 'yes');
+});
