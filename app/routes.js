@@ -35,13 +35,24 @@ router.get('/*/change-contact', function (req, res) {
 })
 
 router.get('/*/change-contact-2', function (req, res) {
+  var toDo = req.query.changeContact
+
+  if (toDo === 'email') {
+    // Redirect to the relevant page
+    res.redirect('change-second-contact-2')
+  } else {
+    res.render('v0-2/change-contact-2')
+  }
+})
+
+router.get('/*/update-contact-2-what', function (req, res) {
   var toDo = req.query.updateContact2
 
   if (toDo === 'add') {
     // Redirect to the relevant page
     res.redirect('add-new-contact-2')
   } else {
-    res.render('v0-2/change-contact-2')
+    res.render('v0-2/update-contact-2-what')
   }
 })
 

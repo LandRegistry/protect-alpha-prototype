@@ -33,7 +33,13 @@
     </div>
 
     <p>
-      We will send confirmation to <span class="govuk-!-font-weight-bold">{{ data['address-selector'] }}</span> and <span class="govuk-!-font-weight-bold">{{ data['address-change-selector'] }}</span>.
+      We will send confirmation to <span class="govuk-!-font-weight-bold">{{ data['address-selector'] }}</span> and <span class="govuk-!-font-weight-bold">
+          {% if (data['address-change-selector'] !== undefined) %}
+            {{ data['address-change-selector'] }}
+          {% elif (data['address-change-selector-2'] !== undefined) %}
+            {{ data['address-change-selector-2'] }}
+          {% endif %}
+      </span>.
     </p>
 
     <p><a href="contact-info-multi-address-updated" class="viewUpdateLink">View updated contact details</a></p>

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  What do you want to do?
+  What do you want to update?
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,26 +25,26 @@
     <div class="govuk-grid-column-two-thirds">
 
       
-      <form id="govuk-custom-add-contact-form" class="form" action="update-contact-2-what" method="get">
+      <form id="govuk-custom-add-contact-form" class="form" action="change-contact-2" method="get">
 
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
-                        What do you want to do?
+                        Which of the following do you want to change?
                     </h1>
                 </legend>
                 <div class="govuk-radios" data-module="radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="change" name="updateContact2" type="radio" value="change">
-                        <label class="govuk-label govuk-radios__label" for "change">
-                            Change these contact details
+                        <input class="govuk-radios__input" id="contactOne" name="changeContact" type="radio" value="address">
+                        <label class="govuk-label govuk-radios__label" for "contactOne">
+                            1 Clinton Street, Exeter EX4 1AX
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="add" name="updateContact2" type="radio" value="add">
+                        <input class="govuk-radios__input" id="contactTwo" name="changeContact" type="radio" value="email">
                         <label class="govuk-label govuk-radios__label" for "add">
-                            Add new contact details
+                            email@email.com
                         </label>
                     </div>
                     
