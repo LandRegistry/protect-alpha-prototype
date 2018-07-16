@@ -15,7 +15,10 @@ router.get('/*/add-address', function (req, res) {
   if (toAdd === 'email') {
     // Redirect to the relevant page
     res.redirect('confirm-email-addition')
-  } else {
+  } else if (toAdd === 'phone') {
+    res.redirect('confirm-phone-addition')
+  }   
+  else {
     res.render('v0-2/add-address')
   }
 })
