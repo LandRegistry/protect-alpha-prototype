@@ -75,39 +75,51 @@
         </style>
     </head>
     <body>
-            <div id="barclays-container">
-                    <img src="/public/images/barclays-logo.png"> 
-                    <h1>
-                        Barclays Identity Assurance
-                    </h1>
-                    <form action="#">
-                         
-                             <legend>
-                                 <h2>
-                                     Your digital identity
-                                 </h2>
-                             </legend>
-                             <div>
-                                 <label for="username">
-                                     Username
-                                 </label>
-                                 <input id="username" name="barclaysSignIn" type="text">
-                             </div>
-                             <div>
-                                 <label for="password">
-                                     Password
-                                 </label>
-                                 <input id="password" name="barclaysSignIn" type="password">
-                             </div>
-                 
-                     </form>
-                     <div class="buttons">
-                            <a href="verification-choose" type="submit" class="cancel">Cancel</a>
-                            <a href="contact-info" type="submit" class="continue">Sign in</a>
-                     </div>
-                     
+        <div id="barclays-container">
+            <img src="/public/images/barclays-logo.png"> 
+            <h1>
+                Barclays Identity Assurance
+            </h1>
+            <form action="#">
                     
-                 </div>
+                <legend>
+                    <h2>
+                        Your digital identity
+                    </h2>
+                </legend>
+                <div>
+                    <label for="username">
+                        Username
+                    </label>
+                    <input id="username" name="barclaysSignIn" type="text">
+                </div>
+                <div>
+                    <label for="password">
+                        Password
+                    </label>
+                    <input id="password" name="barclaysSignIn" type="password">
+                </div>
+        
+            </form>
+            <div class="buttons">
+                <a href="verification-choose" type="submit" class="cancel">Cancel</a>
+                <a href="contact-info" type="submit" class="continue">Sign in</a>
+            </div>
+                
+            
+        </div>
+        <script>
+            let titleCheck = sessionStorage.getItem('propNumber');
+            let destination = document.querySelector('.continue');
+            destination.onclick = function() {
+                if (titleCheck === 'singleAddress') {
+                    destination.setAttribute('href', 'contact-info-single-address');
+                } else if (titleCheck === 'multiAddress') {
+                    destination.setAttribute('href', 'contact-info-multi-address');
+                }
+            }
+        </script>
+
                  
     </body>
 </html>

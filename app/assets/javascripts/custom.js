@@ -14,3 +14,22 @@ $('#add-button').bind('click', function() {
     sessionStorage.setItem('addOrChange', 'add');
 });
 
+$('#govuk-custom-single-title-button').bind('click', function() {
+    sessionStorage.setItem('title', 'singleTitle')
+});
+
+$('#govuk-custom-single-title-button-2').bind('click', function() {
+    sessionStorage.setItem('title', 'multiTitle')
+});
+
+$('#govuk-custom-single-address-button').bind('click', function() {
+    sessionStorage.setItem('propNumber', 'singleAddress')
+});
+
+$('#govuk-custom-multi-address-button').bind('click', function() {
+    sessionStorage.setItem('propNumber', 'multiAddress')
+});
+
+$('.govuk-custom-update-single-property-button').bind('click', function() {
+    sessionStorage.setItem('propNumber', 'single');
+})

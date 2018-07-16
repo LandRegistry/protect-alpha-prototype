@@ -1,0 +1,75 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your contact details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Check your contact details
+      </h1>
+      <table class="govuk-table">
+          <caption class="govuk-table__caption"></caption>
+          <thead class="govuk-table__head"  style="vertical-align:top">
+              <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col">
+                    Address you own<!--<br>
+                    <span class="govuk-!-font-weight-regular govuk-!-font-size-16">This is the property you own</span> -->
+                  </th>
+                  <th class="govuk-table__header" scope="col">
+                    Contact details<!--<br>
+                    <span class="govuk-!-font-size-16 govuk-!-font-weight-regular">This is on the open register</span>
+                    <span class="govuk-!-font-size-14"><a href="open-register">What is this?</a></span> -->
+                  </th>
+                  <th class="govuk-table__header" scope="col">
+                    
+                  </th>
+              </tr>
+          </thead>
+          <tbody class="govuk-table__body"  style="vertical-align:top">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">{{ data['address-selector'] }}</td>
+                  <td class="govuk-table__cell">1 Clinton Street, Exeter EX4 1AX</td>
+                  <td class="govuk-table__cell"><a href="update-contact" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-first-property-button">Update</a></td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">{{ data['address-selector-2'] }}</td>
+                  <td class="govuk-table__cell">1 Clinton Street, Exeter EX4 1AX<br>email@email.com</td>
+                  <td class="govuk-table__cell"><a href="update-contact-2" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-second-property-button">Update</a></td>
+              </tr>
+          </tbody>
+      </table>
+      <p><a href="#">Update all</a></p>
+
+
+
+      
+      
+      <h2 class="govuk-heading-m">
+        No changes required?
+      </h2>
+      <p><a href="address-lookup">Find another property</a> or <a href="https://gov.uk">exit the service</a> (your contact details will not change).</p>
+
+    </div>
+
+  </div>
+{% endblock %}
