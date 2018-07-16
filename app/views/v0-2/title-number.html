@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Change email
+  Do you have a title number?
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,35 +25,27 @@
     <div class="govuk-grid-column-two-thirds">
 
       
-      <form id="govuk-custom-add-contact-form" class="form" action="add-address" method="get">
+      <form id="govuk-custom-add-contact-form" class="form" action="title-number-entry" method="get">
 
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
-                        What are you adding?
+                        Do you know the title number?
                     </h1>
                 </legend>
                 <div class="govuk-radios" data-module="radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="address" name="addContact" type="radio" value="address">
-                        <label class="govuk-label govuk-radios__label" for "address">
-                            Postal address
+                        <input class="govuk-radios__input" id="yesTitle" name="title" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for "yesTitle">
+                            Yes
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="email" name="addContact" type="radio" value="email" data-aria-controls="conditional-email-add">
-                        <label class="govuk-label govuk-radios__label" for "email">
-                            Email
+                        <input class="govuk-radios__input" id="noTitle" name="title" type="radio" value="no">
+                        <label class="govuk-label govuk-radios__label" for "noTitle">
+                            No, I don't know the title number
                         </label>
-                    </div>
-                    <div class="govuk-radios__conditional" id="conditional-email-add">
-                        <div class="govuk-form-group">
-                            <label class="govuk-label" for ="add-email">
-                                Email address
-                            </label>
-                            <input class="govuk-input govuk-!-width-one-third" id="added-item" name="added-item" type="text">
-                        </div>
                     </div>
                     
                 </div>

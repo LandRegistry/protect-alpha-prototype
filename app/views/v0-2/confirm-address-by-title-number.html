@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Confirm address
+  Confirm address by title number
 {% endblock %}
 
 {% block beforeContent %}
@@ -25,9 +25,16 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Your property address is
+        Your property details are
       </h1>
-      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">{{ data['address-selector'] }}</p>
+      <p>
+          <span class="govuk-!-font-weight-bold">Title number</span><br>
+          <span class="govuk-!-font-size-24">{{ data['titleNumber'] }}</span>
+      </p>
+      <p>
+          <span class="govuk-!-font-weight-bold">Property address</span><br>
+          <span class="govuk-!-font-size-24">1 Clinton Street, Exeter EX1 1AX</span>
+      </p>
       <p>Once you have confirmed your property, we will ask you to prove that you are the owner.</p>
       <p>You will need 3 of the following documents to prove your identity as the property owner:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -36,10 +43,10 @@
         <li>National insurance number</li>
       </ul>
       <a href="verification-sign-in" type="submit" class="govuk-button">Confirm and continue</a>
-      <h2 class="govuk-heading-m">Have another title to search?</h2>
-      <p>You can <a href="address-lookup-2">search for another address</a></p>
+      <h2 class="govuk-heading-m">Want to add another property?</h2>
+      <p>You can <a href="title-number-entry-2">search for another title</a></p>
       <p>or</p>
-      <p><a href="title-number-entry">Search by title number</a></p>
+      <p><a href="address-lookup-2">Search by address</a></p>
     </div>
 
   </div>

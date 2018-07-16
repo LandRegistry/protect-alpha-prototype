@@ -16,7 +16,7 @@ router.get('/*/add-address', function (req, res) {
     // Redirect to the relevant page
     res.redirect('confirm-email-addition')
   } else {
-    res.render('v0-1-1/add-address')
+    res.render('v0-2/add-address')
   }
 })
 
@@ -27,7 +27,7 @@ router.get('/*/change-contact', function (req, res) {
     // Redirect to the relevant page
     res.redirect('add-new-contact')
   } else {
-    res.render('v0-1-1/change-contact')
+    res.render('v0-2/change-contact')
   }
 })
 
@@ -39,7 +39,7 @@ router.get('/*/verification-intro', function (req, res) {
     // Redirect to the relevant page
     res.redirect('verification-choose')
   } else {
-    res.render('v0-1-1/verification-intro')
+    res.render('v0-2/verification-intro')
   }
 })
 
@@ -54,4 +54,14 @@ router.get('/*/update-details-multi-exists', function (req, res) {
   }
 })
 
+// Title numbers (e.g. v0-2/title-number)
+router.get('/*/title-number-entry', function (req, res) {
+  var titleExists = req.query.title
+
+  if (titleExists === 'no') {
+    res.redirect('address-lookup')
+  } else {
+    res.render('v0-2/title-number-entry')
+  }
+})
 module.exports = router

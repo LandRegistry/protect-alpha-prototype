@@ -25,9 +25,25 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Your property address is
+        Confirm property addresses
       </h1>
-      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">{{ data['address-selector'] }}</p>
+
+      <table class="govuk-table">
+          <caption class="govuk-table__caption">Confirm property addresses</caption>
+          <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col"></th>
+              </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">1 Clinton Street, Exeter EX4 1AX</td>
+              </tr>
+              <tr class="govuk-table__row">
+                  <td class="govuk-table__cell">50 Durnford Street, Plymouth PL1 3QN</td>
+              </tr>
+          </tbody>
+      </table>
       <p>Once you have confirmed your property, we will ask you to prove that you are the owner.</p>
       <p>You will need 3 of the following documents to prove your identity as the property owner:</p>
       <ul class="govuk-list govuk-list--bullet">
@@ -36,10 +52,7 @@
         <li>National insurance number</li>
       </ul>
       <a href="verification-sign-in" type="submit" class="govuk-button">Confirm and continue</a>
-      <h2 class="govuk-heading-m">Have another title to search?</h2>
-      <p>You can <a href="address-lookup-2">search for another address</a></p>
-      <p>or</p>
-      <p><a href="title-number-entry">Search by title number</a></p>
+      <p><a href="address-lookup">Search again</a></p>
     </div>
 
   </div>

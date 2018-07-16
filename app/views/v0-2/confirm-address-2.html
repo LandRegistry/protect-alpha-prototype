@@ -25,10 +25,17 @@
     <div class="govuk-grid-column-two-thirds">
 
       <h1 class="govuk-heading-l">
-        Your property address is
+        Your property addresses are
       </h1>
-      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">{{ data['address-selector'] }}</p>
-      <p>Once you have confirmed your property, we will ask you to prove that you are the owner.</p>
+      <p>
+          <span class="govuk-!-font-weight-bold">Property 1</span><br>
+          <span class="govuk-!-font-size-24">{{ data['address-selector'] }}</span>
+      </p>
+      <p>
+            <span class="govuk-!-font-weight-bold">Property 2</span><br>
+            <span class="govuk-!-font-size-24">{{ data['address-selector-2'] }}</span>
+        </p>
+      <p>Once you have confirmed your properties, we will ask you to prove that you are the owner.</p>
       <p>You will need 3 of the following documents to prove your identity as the property owner:</p>
       <ul class="govuk-list govuk-list--bullet">
         <li>Passport</li>
@@ -36,7 +43,7 @@
         <li>National insurance number</li>
       </ul>
       <a href="verification-sign-in" type="submit" class="govuk-button">Confirm and continue</a>
-      <h2 class="govuk-heading-m">Have another title to search?</h2>
+      <h2 class="govuk-heading-m">Want to add another property?</h2>
       <p>You can <a href="address-lookup-2">search for another address</a></p>
       <p>or</p>
       <p><a href="title-number-entry">Search by title number</a></p>

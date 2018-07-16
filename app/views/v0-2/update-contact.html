@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Is this address correct?
+  What do you want to do?
 {% endblock %}
 
 {% block beforeContent %}
@@ -13,7 +13,7 @@
       },
       {
         "text": "Protect my property",
-        "href": "#"
+        "href": "start"
       }
     ]
   }) }}
@@ -25,27 +25,26 @@
     <div class="govuk-grid-column-two-thirds">
 
       
-      <form id="govuk-custom-add-contact-form" class="form" action="update-details-multi-exists" method="get">
+      <form id="govuk-custom-add-contact-form" class="form" action="change-contact" method="get">
 
         <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
                 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
                     <h1 class="govuk-fieldset__heading">
-                        Is this the best place to contact you?
+                        What do you want to do?
                     </h1>
-                    <p>{{ data['address-selector'] }}</p>
                 </legend>
-                <div class="govuk-radios govuk-radios--inline" data-module="radios">
+                <div class="govuk-radios" data-module="radios">
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="correct" name="correctAddress" type="radio" value="yes">
-                        <label class="govuk-label govuk-radios__label" for "correct">
-                            Yes
+                        <input class="govuk-radios__input" id="change" name="updateContact" type="radio" value="change">
+                        <label class="govuk-label govuk-radios__label" for "change">
+                            Change these contact details
                         </label>
                     </div>
                     <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="notCorrect" name="correctAddress" type="radio" value="no">
-                        <label class="govuk-label govuk-radios__label" for "notCorrect">
-                            No
+                        <input class="govuk-radios__input" id="add" name="updateContact" type="radio" value="add">
+                        <label class="govuk-label govuk-radios__label" for "add">
+                            Add new contact details
                         </label>
                     </div>
                     
@@ -53,7 +52,7 @@
             </fieldset>
         </div>
 
-        <input id="check-address-button" class="govuk-button" type="submit" value="Continue">
+        <input id="add-button" class="govuk-button" type="submit" value="Continue">
 
       </form>
       
