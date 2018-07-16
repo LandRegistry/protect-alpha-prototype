@@ -15,11 +15,11 @@ $('#add-button').bind('click', function() {
 });
 
 $('#govuk-custom-single-title-button').bind('click', function() {
-    sessionStorage.setItem('title', 'singleTitle')
+    sessionStorage.setItem('propNumber', 'singleAddress')
 });
 
 $('#govuk-custom-single-title-button-2').bind('click', function() {
-    sessionStorage.setItem('title', 'multiTitle')
+    sessionStorage.setItem('propNumber', 'multiAddress')
 });
 
 $('#govuk-custom-single-address-button').bind('click', function() {

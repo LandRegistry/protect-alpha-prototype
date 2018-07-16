@@ -110,12 +110,11 @@
         </div>
         <script>
             let addressCheck = sessionStorage.getItem('propNumber');
-            let titleCheck = sessionStorage.getItem('title');
             let destination = document.querySelector('.continue');
             destination.onclick = function() {
-                if (addressCheck === 'singleAddress' || titleCheck === 'singleTitle') {
+                if (addressCheck === 'singleAddress') {
                     destination.setAttribute('href', 'contact-info-single-address');
-                } else if (addressCheck === 'multiAddress' || titleCheck === 'multiTitle') {
+                } else if (addressCheck === 'multiAddress') {
                     destination.setAttribute('href', 'contact-info-multi-address');
                 }
             }
