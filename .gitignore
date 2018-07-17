@@ -10,4 +10,4 @@ govuk_modules
 /node_modules
 .tmuxp.*
 package-lock.json
-/app/assets/javascripts/get-address.js
+app/assets/javascripts/get-address.js
