@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verification
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-custom-verify-box">
+        <div class="govuk-custom-verify-box-item govuk-custom-verify-icon">
+            <img src="/public/images/govuk-verify-logo.png">
+        </div>
+        <div class="govuk-custom-verify-box-item govuk-custom-verify-blurb">
+          <p>Verifying your identity takes about 15 minutes to complete, but you only have to do it once.</p>
+          <p>You’ll then have an identity account with the certified company.</p>
+          <p>You can then access other government services in less than 1 minute wherever you see the GOV.UK Verify logo.</p>
+          <a class="govuk-button govuk-!-margin-top-2 govuk-!-margin-bottom-8 govuk-verify-button" href="verification-choosing-a-company" role="button">Start now</a>
+          <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Where you can use your identity account
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                <p>GOV.UK Verify is new, and government services are joining all the time. The current services using Verify are:</p>
+                <ul class="govuk-list govuk-list--bullet">
+                  <li>complete your Self Assessment</li>
+                  <li>check your State Pension</li>
+                  <li>sign in to your personal tax account</li>
+                  <li>view or share your driving licence information</li>
+                  <li>get your State Pension</li>
+                  <li>complete your claim or access your Universal Credit account</li>
+                  <li>claim your redundancy payment and monies owed</li>
+                  <li>check your income tax for the current year</li>
+                  <li>report a medical condition that affects your driving</li>
+                  <li>renew your short-term medical driving licence</li>
+                  <li>check or update your company car tax</li>
+                  <li>use Rural Payments</li>
+                  <li>help friends and family with their tax</li>
+                  <li>apply for a vehicle operator licence</li>
+                  <li>apply for a DBS basic check</li>
+                </ul>
+              </div>
+            </details>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+{% endblock %}

@@ -10,6 +10,19 @@ $('.govuk-custom-revert-state').bind('click', function() {
     return false;
 });
 
+$('input[id="private"]').bind('click', function() {
+    if ($(this).attr('checked')) {
+        $(this).attr('checked', false)
+    } else {
+        $(this).attr('checked', true);
+    } 
+});
+
+$('#email-change-button').bind('click', function() {
+    let $privateCheck = $('input[id="private"]').attr('checked');
+    sessionStorage.setItem('privateCheck', $privateCheck);
+});
+
 $('#add-button').bind('click', function() {
     sessionStorage.setItem('addOrChange', 'add');
 });

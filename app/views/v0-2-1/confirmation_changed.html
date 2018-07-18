@@ -1,0 +1,58 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h2 class="govuk-panel__title">
+        Contact details updated
+      </h2>
+      <div class="govuk-panel__body">
+        Your reference number<br><strong>ABC123</strong>
+      </div>
+    </div>
+
+    <p>
+      We will send confirmation to <span class="govuk-!-font-weight-bold">{{ data['address-selector'] }}</span> and <span class="govuk-!-font-weight-bold">
+          {% if (data['address-change-selector'] !== undefined) %}
+            {{ data['address-change-selector'] }}
+          {% elif (data['address-change-selector-2'] !== undefined) %}
+            {{ data['address-change-selector-2'] }}
+          {% endif %}
+      </span>.
+    </p>
+
+    <p><a href="contact-info-multi-address-updated" class="viewUpdateLink">View updated contact details</a></p>
+    <p><a href="view-updated-register">View the updated register</a></p>
+
+
+  </div>
+</div>
+<script>
+  let propertyCheck = sessionStorage.getItem('propNumber');
+  if (propertyCheck === 'single') {
+    document.querySelector('.viewUpdateLink').setAttribute('href', 'contact-info-single-address-updated');
+  }
+  console.log(propertyCheck);
+</script>
+{% endblock %}

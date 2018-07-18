@@ -1,0 +1,71 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h2 class="govuk-panel__title">
+        Contact details updated
+      </h2>
+      <div class="govuk-panel__body">
+        Your reference number<br><strong>ABC123</strong>
+      </div>
+    </div>
+
+    <p>
+      We will send confirmation to <span class="govuk-!-font-weight-bold">1 Clinton Street EX4 1AX</span> and <span class="govuk-!-font-weight-bold">
+          {% if (data['added-item'] !== undefined) %}
+            {{ data['added-item'] }}
+          {% elif (data['added-item-2'] !== undefined) %}
+            {{ data['added-item-2'] }}
+          {% elif (data['added-item-email'] !== undefined) %}
+            {{ data['added-item-email'] }}
+          {% elif (data['added-item-email-2'] !== undefined) %}
+            {{ data['added-item-email-2'] }}
+          {% elif (data['added-item-phone'] !== undefined) %}
+            {{ data['added-item-phone'] }}
+          {% elif (data['added-item-phone-2'] !== undefined) %}
+            {{ data['added-item-phone-2'] }}
+          {% endif %}
+      </span>.
+    </p>
+
+    <p><a href="#" class="viewUpdateLink">View updated contact details</a></p>
+    <p><a href="view-updated-register">View the updated register</a></p>
+
+
+  </div>
+</div>
+<script>
+  let propertyCheck = sessionStorage.getItem('propNumber');
+  if (propertyCheck === 'single') {
+    document.querySelector('.viewUpdateLink').setAttribute('href', 'contact-info-single-address-added');
+  } else if (propertyCheck === 'multiAddress') {
+    document.querySelector('.viewUpdateLink').setAttribute('href', 'contact-info-multi-address-added');
+  }
+  console.log(propertyCheck);
+
+  let privateCheck = sessionStorage.getItem('privateCheck');
+  console.log(privateCheck);
+</script>
+{% endblock %}

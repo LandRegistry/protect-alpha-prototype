@@ -1,0 +1,54 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Contact information
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">
+        Contact details
+      </h1>
+      <!-- <p class="govuk-body">This is the current contact information that is available on the register.</p>
+      <p class="govuk-body">Make sure that this is up to date and make changes if necessary.</p> -->
+      
+      <h2 class="govuk-heading-m">On the register</h2>
+      <dl class="govuk-body govuk-custom-definition-list">
+          <dt>Name</dt>
+          <dd>John Smith</dd>
+          <dt>Address</dt>
+          <dd>{{ data['address-change-selector'] }}<br><a href="#" class="govuk-!-font-size-16">Change</a></dd>
+          <dt>Email</dt>
+            <dd>{{ data['email-change'] }}<br><a href="#" class="govuk-!-font-size-16">Change</a></dd>
+      </dl>
+      <h2 class="govuk-heading-m">Private</h2>
+      <dl class="govuk-body govuk-custom-definition-list">
+            
+            <dt>Telephone</dt>
+            <dd>Not provided<br><a href="#" class="govuk-!-font-size-16">Add</a></dd>
+        </dl>
+        <p class="govuk-body"><a href="start">I don't want to change anything</a></p>
+        <p class="govuk-body"><a href="address-lookup">Find another property</a></p>
+
+    </div>
+
+  </div>
+{% endblock %}
