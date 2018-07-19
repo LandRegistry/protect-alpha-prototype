@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm address by title number
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        We found 1 match for your title number
+      </h1>
+      <p>
+          <span class="govuk-!-font-weight-bold">Title number</span><br>
+          <span class="govuk-!-font-size-24">{{ data['titleNumber'] }}</span>
+      </p>
+      <p>
+          <span class="govuk-!-font-weight-bold">Property address</span><br>
+          <span class="govuk-!-font-size-24">1 Clinton Street, Exeter EX1 1AX</span>
+      </p>
+      
+      <a href="verification-sign-in" type="submit" class="govuk-button" id="govuk-custom-single-title-button">Confirm and continue</a>
+      <h2 class="govuk-heading-m">Want to add another title?</h2>
+      <p>You can <a href="title-number-entry-2">search for another title</a></p>
+      <p>or</p>
+      <p><a href="address-lookup-2">Search by address</a></p>
+    </div>
+
+  </div>
+{% endblock %}

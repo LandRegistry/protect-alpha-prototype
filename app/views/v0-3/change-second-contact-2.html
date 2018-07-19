@@ -1,0 +1,85 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Change email
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+      <form id="govuk-custom-add-contact-form" class="form" action="add-address" method="get">
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        What are you adding?
+                    </h1>
+                </legend>
+                <div class="govuk-radios" data-module="radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="address" name="addContact" type="radio" value="address">
+                        <label class="govuk-label govuk-radios__label" for "address">
+                            Postal address
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="email" name="addContact" type="radio" value="email" data-aria-controls="conditional-email-add">
+                        <label class="govuk-label govuk-radios__label" for "email">
+                            Email
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional" id="conditional-email-add">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for ="add-email-2">
+                                Email address
+                            </label>
+                            <input class="govuk-input govuk-!-width-one-third" id="added-item-2" name="added-item-2" type="text">
+                        </div>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="phone" name="addContact" type="radio" value="phone" data-aria-controls="conditional-phone-add">
+                        <label class="govuk-label govuk-radios__label" for "phone">
+                            Telephone (SMS)
+                        </label>
+                    </div>
+                    <div class="govuk-radios__conditional" id="conditional-phone-add">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label" for ="add-phone-2">
+                                Telephone number
+                            </label>
+                            <input class="govuk-input govuk-!-width-one-third" id="added-item-2" name="added-item-2" type="text">
+                        </div>
+                    </div>
+                    
+                </div>
+            </fieldset>
+        </div>
+
+        <input id="add-button" class="govuk-button" type="submit" value="Continue">
+
+      </form>
+      
+    </div>
+
+  </div>
+{% endblock %}
+

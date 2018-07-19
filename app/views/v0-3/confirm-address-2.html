@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm address
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Your property addresses are
+      </h1>
+      <p>
+          <span class="govuk-!-font-weight-bold">Property 1</span><br>
+          <span class="govuk-!-font-size-24">
+
+              {% if data['address-selector'] !== undefined %}
+              {{ data['address-selector'] }}
+            {% else %}
+              {% if (data['address-line-1']) %}
+                {{ data['address-line-1'] }},
+              {% endif %}
+              {% if (data['address-line-2']) %}
+                {{ data['address-line-2'] }},
+              {% endif %}
+              {% if (data['address-town']) %}
+                {{ data['address-town'] }},
+              {% endif %}
+              {% if (data['address-county']) %}
+                {{ data['address-county'] }},
+              {% endif %}
+              {% if (data['address-postcode']) %}
+                {{ data['address-postcode'] }},
+              {% endif %}
+            {% endif %}
+          </span>
+      </p>
+      <p>
+            <span class="govuk-!-font-weight-bold">Property 2</span><br>
+            <span class="govuk-!-font-size-24">
+                {% if data['address-selector-2'] !== undefined %}
+                {{ data['address-selector-2'] }}
+              {% else %}
+                {% if (data['address-line-1-2']) %}
+                  {{ data['address-line-1-2'] }},
+                {% endif %}
+                {% if (data['address-line-2-2']) %}
+                  {{ data['address-line-2-2'] }},
+                {% endif %}
+                {% if (data['address-town-2']) %}
+                  {{ data['address-town-2'] }},
+                {% endif %}
+                {% if (data['address-county-2']) %}
+                  {{ data['address-county-2'] }},
+                {% endif %}
+                {% if (data['address-postcode-2']) %}
+                  {{ data['address-postcode-2'] }},
+                {% endif %}
+              {% endif %}
+            </span>
+        </p>
+      
+      <a href="verification-sign-in" type="submit" class="govuk-button" id="govuk-custom-multi-address-button">Confirm and continue</a>
+      <h2 class="govuk-heading-m">Want to add another property?</h2>
+      <p>You can <a href="address-lookup-2">search for another address</a></p>
+      <p>or</p>
+      <p><a href="title-number-entry">Search by title number</a></p>
+    </div>
+
+  </div>
+{% endblock %}

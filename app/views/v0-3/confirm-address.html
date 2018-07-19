@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm address
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Your property address is
+      </h1>
+      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">
+        {% if data['address-selector'] !== undefined %}
+          {{ data['address-selector'] }}
+        {% else %}
+          {% if (data['address-line-1']) %}
+            {{ data['address-line-1'] }},
+          {% endif %}
+          {% if (data['address-line-2']) %}
+            {{ data['address-line-2'] }},
+          {% endif %}
+          {% if (data['address-town']) %}
+            {{ data['address-town'] }},
+          {% endif %}
+          {% if (data['address-county']) %}
+            {{ data['address-county'] }},
+          {% endif %}
+          {% if (data['address-postcode']) %}
+            {{ data['address-postcode'] }},
+          {% endif %}
+        {% endif %}
+
+      
+      </p>
+      
+      <a href="verification-sign-in" type="submit" class="govuk-button" id="govuk-custom-single-address-button">Confirm and continue</a>
+      <h2 class="govuk-heading-m">Want to add another property?</h2>
+      <p>You can <a href="address-lookup-2">search for another address</a></p>
+      <p>or</p>
+      <p><a href="title-number-entry">Search by title number</a></p>
+    </div>
+
+  </div>
+{% endblock %}
