@@ -32,7 +32,36 @@
         <dd>{{ data['address-selector'] }}</dd>
 
         <dt>Owners:</dt>
-        <dd>John Smith<br>{{ data['added-item'] }}</dd>
+        <dd>
+          John Smith<br>
+          {% if (data['address-change-selector'] !== undefined) %}
+            {{ data['address-change-selector'] }}
+          {% elif (data['added-item'] !== undefined) %}
+            1 Clinton Street EX1 4AX<br>
+            {{ data['added-item'] }}
+          {% elif (data['added-item-email'] !== '') %}
+            1 Clinton Street EX1 4AX<br>
+            {{ data['added-item-email'] }}
+          {% elif (data['added-item-phone'] !== '') %}
+            1 Clinton Street EX1 4AX<br>
+            {{ data['added-item-phone'] }}
+          {% elif (data['address-change-selector-2'] !== undefined) %}
+            {{ data['address-change-selector-2'] }}<br>
+            email@email.com
+          {% elif (data['added-item-2'] !== undefined) %}
+            {{ data['address-change-selector-2'] }}<br>
+            email@email.com
+            {{ data['added-item-2'] }}
+          {% elif (data['added-item-email-2'] !== '') %}
+            {{ data['address-change-selector-2'] }}<br>
+            email@email.com
+            {{ data['added-item-email-2'] }}
+          {% elif (data['added-item-phone-2'] !== '') %}
+            {{ data['address-change-selector-2'] }}<br>
+            email@email.com
+            {{ data['added-item-phone-2'] }}
+          {% endif %}
+        </dd>
 
         <dt>Lender:</dt>
         <dd>Bank of Cornwall PLC<br>1 Bank Road<br>Plymouth<br>PL1 1LP</dd>
@@ -50,4 +79,9 @@
     </div>
 
   </div>
+
+  <script>
+     let propertyCheck = sessionStorage.getItem('propNumber');
+    console.log(propertyCheck);
+  </script>
 {% endblock %}
