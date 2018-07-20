@@ -182,3 +182,43 @@
 .barclays {
     width: 50% !important;
 }
+
+/* guidance */
+.govuk-custom-guidance-text {
+    font-size: 27px;
+    color: #6F777B;
+    margin-bottom: 0;
+}
+
+.govuk-custom-guidance-definition-list dl {
+    display: inline;
+    font-size: 14px;
+    padding-bottom: 20px;
+}
+
+.govuk-custom-guidance-definition-list dt {
+    float: left;
+    clear: left;
+    width: 8em;
+}
+
+.govuk-custom-guidance-header {
+    margin-bottom: 50px;
+}
+
+nav h1 {
+    border-bottom: 1px solid #bfc1c3;
+    margin-bottom: 0 !important;
+    padding-bottom: 0.5em;
+}
+
+.govuk-custom-document-selections {
+    padding-inline-start: 0 !important;
+    margin: 0 auto;
+
+    & li {
+        list-style-type: none;
+        border-bottom: 1px solid #bfc1c3;
+        padding: 0.5em 0;
+    }
+}
