@@ -52,10 +52,13 @@
       </p>
       
       <a href="verification-sign-in" type="submit" class="govuk-button" id="govuk-custom-single-address-button">Confirm and continue</a>
-      <h2 class="govuk-heading-m">Want to add another property?</h2>
-      <p>You can <a href="address-lookup-2">search for another address</a></p>
-      <p>or</p>
-      <p><a href="title-number-entry">Search by title number</a></p>
+
+      {% if data['propNumber'] === 'yes' %}
+        <h2 class="govuk-heading-m">Want to add another property?</h2>
+        <p>You can <a href="address-lookup-2">search for another address</a></p>
+        <p>or</p>
+        <p><a href="title-number-entry">Search by title number</a></p>
+      {% endif %}
     </div>
 
   </div>

@@ -52,18 +52,18 @@
                       1 Clinton Street, Exeter EX4 1AX<br>
                       {{ data['added-item'] }}
                   </td>
-                  <td class="govuk-table__cell"><a href="update-contact" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-first-property-button">Update</a></td>
+                  <!-- <td class="govuk-table__cell"><a href="update-contact" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-first-property-button">Update</a></td> -->
               </tr>
               <tr class="govuk-table__row">
                   <td class="govuk-table__cell">{{ data['address-selector-2'] }}</td>
-                  <td class="govuk-table__cell">
+                  <td class="govuk-table__cell" colaspan="2">
                       1 Clinton Street, Exeter EX4 1AX<br>
-                      email@email.com<br>
+                      email@email.com <span class="govuk-!-font-size-16">(private)</span><br>
                       {% if (data['added-item-2'] !== undefined) %}
                         {{ data['added-item-2'] }}
                       {% endif %}
                     </td>
-                  <td class="govuk-table__cell"><a href="update-contact-2" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-second-property-button">Update</a></td>
+                  <!-- <td class="govuk-table__cell"><a href="update-contact-2" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-second-property-button">Update</a></td> -->
               </tr>
           </tbody>
       </table>

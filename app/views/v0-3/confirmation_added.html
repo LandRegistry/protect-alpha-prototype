@@ -32,8 +32,10 @@
       </div>
     </div>
 
-    <p>
-      We will send confirmation to <span class="govuk-!-font-weight-bold">1 Clinton Street EX4 1AX</span> and <span class="govuk-!-font-weight-bold">
+    <p>These are your updated contact details. HM Land Registry will send you a letter to confirm these changes.</p>
+
+    <!-- <p>
+      We will send confirmation to:<br><span class="govuk-!-font-weight-bold">1 Clinton Street EX4 1AX</span> and <span class="govuk-!-font-weight-bold">
           {% if (data['added-item'] !== undefined) %}
             {{ data['added-item'] }}
           {% elif (data['added-item-2'] !== undefined) %}
@@ -48,22 +50,81 @@
             {{ data['added-item-phone-2'] }}
           {% endif %}
       </span>.
-    </p>
+    </p> -->
+    </div>
+    <div class="govuk-grid-column-full">
+    <table class="govuk-table">
+      <caption class="govuk-table__caption"></caption>
+      <thead class="govuk-table__head"  style="vertical-align:top">
+          <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col">
+                Address you own<!--<br>
+                <span class="govuk-!-font-weight-regular govuk-!-font-size-16">This is the property you own</span> -->
+              </th>
+              <th class="govuk-table__header" scope="col">
+                Contact details<!--<br>
+                <span class="govuk-!-font-size-16 govuk-!-font-weight-regular">This is on the open register</span>
+                <span class="govuk-!-font-size-14"><a href="open-register">What is this?</a></span> -->
+              </th>
+              <th class="govuk-table__header" scope="col">
+                
+              </th>
+          </tr>
+      </thead>
+      <tbody class="govuk-table__body"  style="vertical-align:top">
+          <tr class="govuk-table__row">
+              <td class="govuk-table__cell">{{ data['address-selector'] }}</td>
+              <td class="govuk-table__cell">
+                  1 Clinton Street, Exeter EX4 1AX<br>
+                  {% if (data['added-item']) !== undefined %}
+                    {{ data['added-item'] }}
+                  {% elif (data['added-item-email'] !== '') %}
+                    {{ data['added-item-email'] }} <!-- <span class="govuk-!-font-size-16">(private)</span> -->
+                  {% elif (data['added-item-phone'] !== '') %}
+                    {{ data['added-item-phone'] }} <span class="govuk-!-font-size-16">(private)</span>
+                  {% endif %}
+              </td>
+              <!-- <td class="govuk-table__cell"><a href="update-contact" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-first-property-button">Update</a></td> -->
+          </tr>
+          <tr class="govuk-table__row multi-prop-row hidden">
+              <td class="govuk-table__cell">{{ data['address-selector-2'] }}</td>
+              <td class="govuk-table__cell" colaspan="2">
+                  1 Clinton Street, Exeter EX4 1AX<br>
+                  email@email.com <span class="govuk-!-font-size-16">(private)</span><br>
+                  {% if (data['added-item-2']) !== undefined %}
+                    {{ data['added-item-2'] }}
+                  {% elif (data['added-item-email-2'] !== '') %}
+                    {{ data['added-item-email-2'] }} <!-- <span class="govuk-!-font-size-16">(private)</span> -->
+                  {% elif (data['added-item-phone-2'] !== '') %}
+                    {{ data['added-item-phone-2'] }} <span class="govuk-!-font-size-16">(private)</span>
+                  {% endif %}
+                </td>
+              <!-- <td class="govuk-table__cell"><a href="update-contact-2" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-second-property-button">Update</a></td> -->
+          </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="govuk-grid-column-two-thirds">
 
-    <p><a href="#" class="viewUpdateLink">View updated contact details</a></p>
-    <p><a href="view-updated-register">View the updated register</a></p>
+    <p class="hidden update-another-link"><a href="contact-info-multi-address-another">Update contact details for another property</a></p>
+
+    <h2 class="govuk-heading-m">
+      Updated register
+    </h2>  
+  <!-- <p><a href="#" class="viewUpdateLink">View updated contact details</a></p> -->
+    <p>The register is now updated. You can <a href="view-updated-register">view the updated register</a>.</p> 
+    <p>Or <a href="#">exit the service</a>.</p>
 
 
   </div>
 </div>
 <script>
   let propertyCheck = sessionStorage.getItem('propNumber');
-  if (propertyCheck === 'single') {
-    document.querySelector('.viewUpdateLink').setAttribute('href', 'contact-info-single-address-added');
-  } else if (propertyCheck === 'multiAddress') {
-    document.querySelector('.viewUpdateLink').setAttribute('href', 'contact-info-multi-address-added');
-  }
   console.log(propertyCheck);
+  if (propertyCheck === 'multiAddress') {
+    document.querySelector('.multi-prop-row').classList.remove('hidden');
+    document.querySelector('.update-another-link').classList.remove('hidden');
+  }
 
   let privateCheck = sessionStorage.getItem('privateCheck');
   console.log(privateCheck);
