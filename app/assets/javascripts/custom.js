@@ -50,3 +50,11 @@ $('.govuk-custom-update-single-property-button').bind('click', function() {
 $('#govuk-custom-manual-address-entry-button').bind('click', function() {
     sessionStorage.setItem('manualAddress', 'yes');
 });
+
+$('.govuk-custom-update-first-property-button').bind('click', function() {
+    sessionStorage.setItem('whichProperty', 'first');
+});
+
+$('.govuk-custom-update-second-property-button').bind('click', function() {
+    sessionStorage.setItem('whichProperty', 'second');
+})

@@ -80,7 +80,11 @@
                   {% endif %}
                 </td>
                 <td class="govuk-table__cell" colaspan="2">
-                    1 Clinton Street, Exeter EX4 1AX<br>
+                    {% if (data['address-change-selector-2'] !== undefined) %}
+                      {{ data['address-change-selector-2'] }}<br>
+                    {% else %}
+                      1 Clinton Street, Exeter EX4 1AX<br>
+                    {% endif %}
                     email@email.com <span class="govuk-!-font-size-16">(private)</span><br>
                     {% if (data['address-change-selector'] !== undefined) %}
                       {{ data['address-change-selector'] }}
@@ -109,12 +113,22 @@
     </div>
     <script>
       let propertyCheck = sessionStorage.getItem('propNumber');
+      let whichProperty = sessionStorage.getItem('whichProperty');
       console.log(propertyCheck);
-      if (propertyCheck === 'multiAddress') {
-        /*document.querySelector('.multi-prop-row').classList.remove('hidden');
-        document.querySelector('.single-prop-row').classList.add('hidden');*/
-        document.querySelector('.update-another-link').classList.remove('hidden');
+
+      if (whichProperty === 'first') {
+        document.querySelector('.single-prop-row').classList.remove('hidden');
+        document.querySelector('.multi-prop-row').classList.add('hidden');
+      } else if (whichProperty === 'second') {
+        document.querySelector('.single-prop-row').classList.add('hidden');
+        document.querySelector('.multi-prop-row').classList.remove('hidden');
       }
+
+      /*if (propertyCheck === 'multiAddress') {
+        document.querySelector('.multi-prop-row').classList.remove('hidden');
+        document.querySelector('.single-prop-row').classList.add('hidden');
+        document.querySelector('.update-another-link').classList.remove('hidden');
+      }*/
     
       let privateCheck = sessionStorage.getItem('privateCheck');
       console.log(privateCheck);
