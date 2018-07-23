@@ -214,6 +214,9 @@ nav h1 {
 
 .govuk-custom-document-selections {
     padding-inline-start: 0 !important;
+    -webkit-padding-start: 0 !important;
+    -moz-padding-start: 0 !important;
+    padding-start: 0 !important;
     margin: 0 auto;
 
     & li {
