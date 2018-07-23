@@ -1,0 +1,143 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h2 class="govuk-panel__title">
+        Contact details updated
+      </h2>
+      <div class="govuk-panel__body">
+        Your reference number<br><strong>ABC123</strong>
+      </div>
+    </div>
+    <p>These are your updated contact details. HM Land Registry will send you a letter to confirm these changes.</p>
+  </div>
+  
+  <div class="govuk-grid-column-full">
+      <table class="govuk-table">
+        <caption class="govuk-table__caption"></caption>
+        <thead class="govuk-table__head"  style="vertical-align:top">
+            <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col">
+                  Address you own<!--<br>
+                  <span class="govuk-!-font-weight-regular govuk-!-font-size-16">This is the property you own</span> -->
+                </th>
+                <th class="govuk-table__header" scope="col">
+                  Contact details<!--<br>
+                  <span class="govuk-!-font-size-16 govuk-!-font-weight-regular">This is on the open register</span>
+                  <span class="govuk-!-font-size-14"><a href="open-register">What is this?</a></span> -->
+                </th>
+                <th class="govuk-table__header" scope="col">
+                  
+                </th>
+            </tr>
+        </thead>
+        <tbody class="govuk-table__body"  style="vertical-align:top">
+            <tr class="govuk-table__row single-prop-row">
+                <td class="govuk-table__cell">
+                  {% if (data['address-selector'] !== undefined ) %}
+                    {{ data['address-selector'] }}
+                  {% else %}
+                    1 Clinton Street, Exeter EX4 1AX
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell">
+                    {% if (data['address-change-selector'] !== undefined) %}
+                      {{ data['address-change-selector'] }}
+                    {% elif (data['address-change-selector-2'] !== undefined) %}
+                      {{ data['address-change-selector-2'] }}
+                    {% endif %}
+                </td>
+                <!-- <td class="govuk-table__cell"><a href="update-contact" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-first-property-button">Update</a></td> -->
+            </tr>
+            <tr class="govuk-table__row multi-prop-row hidden">
+                <td class="govuk-table__cell">
+                  {% if (data['address-selector-2'] !== undefined ) %}
+                    {{ data['address-selector-2'] }}
+                  {% else %}
+                    3 Clinton Street, Exeter EX4 1AX
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell" colaspan="2">
+                    {% if (data['address-change-selector-2'] !== undefined) %}
+                      {{ data['address-change-selector-2'] }}<br>
+                    {% else %}
+                      1 Clinton Street, Exeter EX4 1AX<br>
+                    {% endif %}
+                    {% if (data['added-item-email'] !== undefined) %}
+                      {{ data['added-item-email'] }}
+                    {% elif (data['added-item-email-2'] !== undefined) %}
+                      {{ data['added-item-email-2']}}
+                    {% else %}
+                      email@email.com
+                    {% endif %}
+                    <br>
+                    {% if (data['address-change-selector'] !== undefined) %}
+                      {{ data['address-change-selector'] }}
+                    {% elif (data['address-change-selector-2'] !== undefined) %}
+                      {{ data['address-change-selector-2'] }}
+                    {% endif %}
+                  </td>
+                <!-- <td class="govuk-table__cell"><a href="update-contact-2" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-second-property-button">Update</a></td> -->
+            </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="govuk-grid-column-two-thirds">
+
+        <p class="hidden update-another-link"><a href="contact-info-multi-address-another">Update contact details for another property</a></p>
+    
+        <h2 class="govuk-heading-m">
+          Updated register
+        </h2>  
+      <!-- <p><a href="#" class="viewUpdateLink">View updated contact details</a></p> -->
+        <p>The register is now updated. You can <a href="view-updated-register">view the updated register</a>.</p> 
+        <p>Or <a href="#">exit the service</a>.</p>
+    
+    
+      </div>
+    </div>
+    <script>
+      let propertyCheck = sessionStorage.getItem('propNumber');
+      let whichProperty = sessionStorage.getItem('whichProperty');
+      console.log(propertyCheck);
+
+      if (whichProperty === 'first') {
+        document.querySelector('.single-prop-row').classList.remove('hidden');
+        document.querySelector('.multi-prop-row').classList.add('hidden');
+      } else if (whichProperty === 'second') {
+        document.querySelector('.single-prop-row').classList.add('hidden');
+        document.querySelector('.multi-prop-row').classList.remove('hidden');
+      }
+
+      /*if (propertyCheck === 'multiAddress') {
+        document.querySelector('.multi-prop-row').classList.remove('hidden');
+        document.querySelector('.single-prop-row').classList.add('hidden');
+        document.querySelector('.update-another-link').classList.remove('hidden');
+      }*/
+    
+      let privateCheck = sessionStorage.getItem('privateCheck');
+      console.log(privateCheck);
+    </script>
+{% endblock %}

@@ -1,0 +1,66 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm changes
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Confirm your new contact details
+    </h1>
+    <dl class="app-check-your-answers app-check-your-answers--short">
+      <div class="app-check-your-answers__contents">
+          <dt class="app-check-your-answers__question">
+          Email
+          </dt>
+          <dd class="app-check-your-answers__answer">
+            {% if (data['added-item-email'] !== undefined) %}
+              {{ data['added-item-email'] }}
+            {% elif (data['added-item-email-2'] !== undefined) %}
+              {{ data['added-item-email-2'] }}
+            {% endif %}
+          </dd>
+          <dd class="app-check-your-answers__change">
+              <a href="address-change">
+                  Change<span class="govuk-visually-hidden"> email</span>
+              </a>
+          </dd>
+      </div>
+     </dl>
+     <form action="confirmation-added" method="post">
+      <div class="govuk-checkboxes">
+        <div class="govuk-checkboxes__item">
+          <input class="govuk-checkboxes__input" id="private" name="private" type="checkbox" value="private" checked>
+          <label class="govuk-label govuk-checkboxes__label" for="private">
+            Make this visible on the open register (TBC)<br><span class="govuk-!-font-size-14"><a href="open-register">What is this?</a></span>
+          </label>
+          
+        </div>
+      </div>
+     </form>
+    <p><a href="confirmation_added" type="submit" class="govuk-button" id="email-change-button">Confirm</a></p>
+    <p><a href="#">Cancel changes</a></p>
+  </div>
+
+</div>
+{% endblock %}
+
