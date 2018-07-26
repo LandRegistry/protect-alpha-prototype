@@ -19,7 +19,7 @@ router.get('/*/add-address', function (req, res) {
     res.redirect('confirm-phone-addition')
   }   
   else {
-    res.render('v0-3-1/add-address')
+    res.render('v0-4/add-address')
   }
 })
 
@@ -33,7 +33,7 @@ router.get('/*/add-address-2', function (req, res) {
     res.redirect('confirm-phone-change')
   }   
   else {
-    res.render('v0-3-1/add-address-2')
+    res.render('v0-4/add-address-2')
   }
 })
 
@@ -44,7 +44,7 @@ router.get('/*/change-contact', function (req, res) {
     // Redirect to the relevant page
     res.redirect('add-new-contact')
   } else {
-    res.render('v0-3-1/change-contact')
+    res.render('v0-4/change-contact')
   }
 })
 
@@ -55,7 +55,7 @@ router.get('/*/change-contact-2', function (req, res) {
     // Redirect to the relevant page
     res.redirect('change-second-contact-2')
   } else {
-    res.render('v0-3-1/change-contact-2')
+    res.render('v0-4/change-contact-2')
   }
 })
 
@@ -69,7 +69,7 @@ router.get('/*/update-contact-2-what', function (req, res) {
     res.redirect('delete-contact-2')
   }  
   else {
-    res.render('v0-3-1/update-contact-2-what')
+    res.render('v0-4/update-contact-2-what')
   }
 })
 
@@ -81,7 +81,7 @@ router.get('/*/verification-intro', function (req, res) {
     // Redirect to the relevant page
     res.redirect('verification-choose')
   } else {
-    res.render('v0-3-1/verification-intro')
+    res.render('v0-4/verification-intro')
   }
 })
 
@@ -92,18 +92,18 @@ router.get('/*/update-details-multi-exists', function (req, res) {
   if (confirmAddress === 'yes') {
     res.redirect('address-is-correct')
   } else {
-    res.render('v0-3-1/update-details-multi-exists')
+    res.render('v0-4/update-details-multi-exists')
   }
 })
 
-// Title numbers (e.g. v0-3-1/title-number)
+// Title numbers (e.g. v0-4/title-number)
 router.get('/*/title-number-entry', function (req, res) {
   var titleExists = req.query.title
 
   if (titleExists === 'no') {
     res.redirect('address-lookup')
   } else {
-    res.render('v0-3-1/title-number-entry')
+    res.render('v0-4/title-number-entry')
   }
 })
 

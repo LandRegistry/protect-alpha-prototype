@@ -1,0 +1,87 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  View updated register
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Summary of title AB12345
+      </h1>
+      <dl class="govuk-custom-definition-list govuk-body">
+        <dt>Address:</dt>
+        <dd>{{ data['address-selector'] }}</dd>
+
+        <dt>Owners:</dt>
+        <dd>
+          John Smith<br>
+          {% if (data['address-change-selector'] !== undefined) %}
+            {{ data['address-change-selector'] }}
+          {% elif (data['added-item'] !== undefined) %}
+            1 Clinton Street EX1 4AX<br>
+            {{ data['added-item'] }}
+          {% elif (data['added-item-email'] !== '') %}
+            1 Clinton Street EX1 4AX<br>
+            {{ data['added-item-email'] }}
+          {% elif (data['added-item-phone'] !== '') %}
+            1 Clinton Street EX1 4AX<br>
+            {{ data['added-item-phone'] }}
+          {% elif (data['address-change-selector-2'] !== undefined) %}
+            {{ data['address-change-selector-2'] }}<br>
+            email@email.com
+          {% elif (data['added-item-2'] !== undefined) %}
+            {{ data['address-change-selector-2'] }}<br>
+            email@email.com
+            {{ data['added-item-2'] }}
+          {% elif (data['added-item-email-2'] !== '') %}
+            {{ data['address-change-selector-2'] }}<br>
+            email@email.com
+            {{ data['added-item-email-2'] }}
+          {% elif (data['added-item-phone-2'] !== '') %}
+            {{ data['address-change-selector-2'] }}<br>
+            email@email.com
+            {{ data['added-item-phone-2'] }}
+          {% endif %}
+        </dd>
+
+        <dt>Lender:</dt>
+        <dd>Bank of Cornwall PLC<br>1 Bank Road<br>Plymouth<br>PL1 1LP</dd>
+        
+        <dt>Tenure:</dt>
+        <dd>Freehold</dd>
+
+        <dt>Price paid:</dt>
+        <dd>The price stated to have been paid on 02 April 2015 was £275,000</dd>
+      </dl>
+
+      
+      <p><a href="address-lookup">Find another property</a> or <a href="https://gov.uk">exit the service</a>.</p>
+
+    </div>
+
+  </div>
+
+  <script>
+     let propertyCheck = sessionStorage.getItem('propNumber');
+    console.log(propertyCheck);
+  </script>
+{% endblock %}
