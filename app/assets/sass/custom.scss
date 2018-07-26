@@ -225,3 +225,12 @@ nav h1 {
         padding: 0.5em 0;
     }
 }
+
+.govuk-custom-contact-dl {
+
+    & dd {
+        margin-inline-start: 0;
+        -webkit-margin-inline-start 0;
+        margin-bottom: 2em !important;
+    }
+}
