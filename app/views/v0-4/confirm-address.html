@@ -27,7 +27,7 @@
       <h1 class="govuk-heading-l">
         Your property address is
       </h1>
-      <p class="govuk-body govuk-!-font-weight-bold govuk-!-font-size-24">
+      <p class="govuk-body govuk-!-font-size-24">
         {% if data['address-selector'] !== undefined %}
           {{ data['address-selector'] }}
         {% else %}
@@ -50,11 +50,16 @@
 
       
       </p>
-      <p><a href="address-lookup-2">+ Add another property</a></p>
+      {% if (data['propNumber'] === 'yes') %}
+      <p id="add-multiple-button"><a href="address-lookup-2">+ Add another property</a></p>
+      {% endif %}
       
       <a href="verification-sign-in" type="submit" class="govuk-button" id="govuk-custom-single-address-button">Confirm and continue</a>
 
     </div>
 
   </div>
+  
+  
 {% endblock %}
+
