@@ -187,7 +187,7 @@
 
 
 
-      <table class="govuk-table multi-property-table">
+      <table class="govuk-table multi-property-table hidden">
           <caption class="govuk-table__caption govuk-!-font-size-24">
               {% if (data['address-selector-2'] !== undefined) %}
                     {{ data['address-selector-2'] }}
@@ -420,8 +420,8 @@
       let multiplePropertyCheck = sessionStorage.getItem('multiplePropertyToAdd');
       let multiPropertyTableExists = document.querySelector ('.multi-property-table');
       console.log(multiplePropertyCheck);
-      if (multiplePropertyCheck === 'no' && multiPropertyTableExists !== null) {
-          document.querySelector('.multi-property-table').classList.add('hidden');
+      if (multiplePropertyCheck === 'yes') {
+          document.querySelector('.multi-property-table').classList.remove('hidden');
       }
     </script>
 {% endblock %}
