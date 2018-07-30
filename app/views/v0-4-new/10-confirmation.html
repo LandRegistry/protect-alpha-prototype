@@ -43,7 +43,8 @@
       <li>check that you own this property</li>
       <li>approve your new contact details</li>
       <li>add your (new) contact details to your title deed</li>
-      <li>send you a tbc to confirm this change</li>
+      <li>send you a tbc to confirm this change (plus an email / text, if you added this to your contact details)</li>
+      <li>send fraud alerts to these new contact details if we suspect fraud on your property</li>
     </ul>
 
     <p>We will send confirmation letter (plus email/text) to your:</p>
@@ -57,6 +58,7 @@
     </h2>
 
     <p>If HM Land Registry suspects that someone is not the owner of a property, we will open a fraud enquiry. We will not publish any new contact details if we suspect fraud.</p>
+    <p>After your new contact details have been approved, we will use these to contact you if we suspect fraud on your property. We will not keep sending fraud alerts to your ‘old’ contact details.</p>
 
     <h3 class="govuk-heading-s">
       Contact HM Land Registry
@@ -107,7 +109,7 @@
             </thead>
             <tbody class="govuk-table__body">
                 <tr class="govuk-table__row" style="vertical-align:top">
-                    <th class="govuk-table__header" scope="row">Address you own</th>
+                    <th class="govuk-table__header" scope="row">Your property</th>
                     <td class="govuk-table__cell">
                         {% if (data['address-selector'] !== undefined) %}
                           {{ data['address-selector'] }}
@@ -134,7 +136,7 @@
                   </tr>
               
               <tr class="govuk-table__row" style="vertical-align:top">
-                <th class="govuk-table__header" scope="row">Postal address</th>
+                <th class="govuk-table__header" scope="row">Send fraud alerts to</th>
                 <td class="govuk-table__cell">
                     {% if (data['first-address-to-first-property'] !== undefined) %}
                       {{ data['first-address-to-first-property'] }}
@@ -163,7 +165,7 @@
                 
               </tr>
               <tr class="govuk-table__row email-row" style="vertical-align:top">
-                <th class="govuk-table__header" scope="row">Email</th>
+                <th class="govuk-table__header" scope="row">Email fraud alerts to</th>
                 <td class="govuk-table__cell">
                   
                   {% if (data['change-first-email-of-first-property'] !== undefined) %}
@@ -183,7 +185,7 @@
                 
               </tr>
               <tr class="govuk-table__row phone-row" style="vertical-align:top">
-                  <th class="govuk-table__header" scope="row">Telephone</th>
+                  <th class="govuk-table__header" scope="row">Text fraud alerts to</th>
                   <td class="govuk-table__cell">
                     
                     {% if (data['change-first-telephone-of-first-property'] !== undefined) %}
@@ -218,7 +220,7 @@
               </thead>
               <tbody class="govuk-table__body">
                   <tr class="govuk-table__row" style="vertical-align:top">
-                      <th class="govuk-table__header" scope="row">Address you own</th>
+                      <th class="govuk-table__header" scope="row">Your property</th>
                       <td class="govuk-table__cell">
                           {% if (data['address-selector-2'] !== undefined) %}
                         {{ data['address-selector-2'] }}
@@ -244,14 +246,14 @@
                       </td>
                     </tr>
                 <tr class="govuk-table__row" style="vertical-align:top">
-                  <th class="govuk-table__header" scope="row">Postal address</th>
+                  <th class="govuk-table__header" scope="row">Send fraud alerts to</th>
                   <td class="govuk-table__cell">
                       1 Clinton Street, Exeter EX4 1AX
                       
                   </td>
                 </tr>
                 <tr class="govuk-table__row" style="vertical-align:top">
-                  <th class="govuk-table__header" scope="row">Email</th>
+                  <th class="govuk-table__header" scope="row">Email fraud alerts to</th>
                   <td class="govuk-table__cell">
                       {% if (data['change-first-email-of-second-property'] !== undefined) %}
                         {{ data['change-first-email-of-second-property'] }}<br>
@@ -270,7 +272,7 @@
                   </td>
                 </tr>
                 <tr class="govuk-table__row" style="vertical-align:top">
-                  <th class="govuk-table__header" scope="row">Telephone</th>
+                  <th class="govuk-table__header" scope="row">Text fraud alerts to</th>
                   <td class="govuk-table__cell">
                       {% if (data['change-first-telephone-of-second-property'] !== undefined) %}
                         {{ data['change-first-telephone-of-second-property'] }}<br>

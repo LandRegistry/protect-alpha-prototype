@@ -254,9 +254,14 @@ if (document.querySelector('.add-third-address-to-second-property') !== null) {
         sessionStorage.setItem('item-to-update', 'third address to second-property');
     }
 }
+if (document.querySelector('.change-first-address-of-first-property') !== null) {
+    document.querySelector('.change-first-address-of-first-property').onclick = function() {
+        sessionStorage.setItem('item-to-update', 'change first address of first property');
+    }
+}
 if (document.querySelector('.change-first-address-of-second-property') !== null) {
     document.querySelector('.change-first-address-of-second-property').onclick = function() {
-        sessionStorage.setItem('item-to-update', 'first address of second property');
+        sessionStorage.setItem('item-to-update', 'change first address of second property');
     }
 }
 if (document.querySelector('.change-second-address-of-second-property') !==null ) {

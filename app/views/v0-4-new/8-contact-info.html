@@ -27,7 +27,7 @@
       <h1 class="govuk-heading-l">
         Contact details
       </h1>
-      <p>Check and confirm your contact details with HM Land Registry.</p>
+      <p>Check your contact details. HM Land Registry will use these to contact you if we suspect fraud on your property.</p>
 
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-!-font-size-24">
@@ -41,7 +41,7 @@
         </thead>
         <tbody class="govuk-table__body">
             <tr class="govuk-table__row" style="vertical-align:top">
-                <th class="govuk-table__header" scope="row" style="width:200px">Address you own</th>
+                <th class="govuk-table__header" scope="row" style="width:200px">Your property</th>
                 <td class="govuk-table__cell">
                     {% if (data['address-selector'] !== undefined) %}
                       {{ data['address-selector'] }}
@@ -69,7 +69,7 @@
                 <td class="govuk-table__cell" style="width:100px"></td>
               </tr>
           <tr class="govuk-table__row" style="vertical-align:top">
-            <th class="govuk-table__header" scope="row" style="width:200px">Correspondence address</th>
+            <th class="govuk-table__header" scope="row" style="width:200px">Send fraud alerts to</th>
             <td class="govuk-table__cell">
                 1 Clinton Street, Exeter EX4 1AX
                 <br>
@@ -79,7 +79,7 @@
             <td class="govuk-table__cell" style="width:100px"></td>
           </tr>
           <tr class="govuk-table__row" style="vertical-align:top">
-            <th class="govuk-table__header" scope="row" style="width:200px">Email</th>
+            <th class="govuk-table__header" scope="row" style="width:200px">Email fraud alerts to</th>
             <td class="govuk-table__cell">
                 <a href="9a-add-new-email" class="add-first-email-to-first-property">+ Add new</a>
             </td>
@@ -87,7 +87,7 @@
             <td class="govuk-table__cell" style="width:100px"></td>
           </tr>
           <tr class="govuk-table__row" style="vertical-align:top">
-            <th class="govuk-table__header" scope="row" style="width:200px">Telephone</th>
+            <th class="govuk-table__header" scope="row" style="width:200px">Text fraud alerts to </th>
             <td class="govuk-table__cell">
                 <a href="9a-add-new-phone" class="add-first-telephone-to-first-property">+ Add new</a>
             </td>
@@ -110,7 +110,7 @@
           </thead>
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row" style="vertical-align:top">
-              <th class="govuk-table__header" scope="row" style="width:200px">Address you own</th>
+              <th class="govuk-table__header" scope="row" style="width:200px">Your property</th>
               <td class="govuk-table__cell">
                   {% if (data['address-selector-2'] !== undefined) %}
                 {{ data['address-selector-2'] }}
@@ -138,7 +138,7 @@
               <td class="govuk-table__cell" style="width:100px"></td>
             </tr>
             <tr class="govuk-table__row" style="vertical-align:top">
-              <th class="govuk-table__header" scope="row" style="width:200px">Correspondence address</th>
+              <th class="govuk-table__header" scope="row" style="width:200px">Send fraud alerts to</th>
               <td class="govuk-table__cell">
                   1 Clinton Street, Exeter EX4 1AX
                   <br>
@@ -148,7 +148,7 @@
               <td class="govuk-table__cell" style="width:100px"></td>
             </tr>
             <tr class="govuk-table__row" style="vertical-align:top">
-              <th class="govuk-table__header" scope="row" style="width:200px">Email</th>
+              <th class="govuk-table__header" scope="row" style="width:200px">Email fraud alerts to</th>
               <td class="govuk-table__cell">
                   <a href="9a-add-new-email" class="add-first-email-to-second-property">+ Add new</a>
               </td>
@@ -156,7 +156,7 @@
               <td class="govuk-table__cell" style="width:100px"></td>
             </tr>
             <tr class="govuk-table__row" style="vertical-align:top">
-              <th class="govuk-table__header" scope="row" style="width:200px">Telephone</th>
+              <th class="govuk-table__header" scope="row" style="width:200px">Text fraud alerts to</th>
               <td class="govuk-table__cell">
                   <a href="9a-add-new-phone" class="add-first-telephone-to-second-property">+ Add new</a>
               </td>
