@@ -31,19 +31,7 @@
 
       <table class="govuk-table">
         <caption class="govuk-table__caption govuk-!-font-size-24">
-            
-        </caption>
-        <thead class="govuk-table__head">
-          <tr class="govuk-table__row">
-            <th class="govuk-table__header" scope="col"></th>
-            <th class="govuk-table__header" scope="col" colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody class="govuk-table__body">
-            <tr class="govuk-table__row" style="vertical-align:top">
-                <th class="govuk-table__header" scope="row" style="width:200px">Your property</th>
-                <td class="govuk-table__cell">
-                    {% if (data['address-selector'] !== undefined) %}
+            {% if (data['address-selector'] !== undefined) %}
                       {{ data['address-selector'] }}
                     {% elif (data['titleNumber'] !== undefined) %}
                       1 Clinton Street, Exeter EX4 1AX
@@ -64,10 +52,15 @@
                         {{ data['address-postcode'] }},
                       {% endif %}
                     {% endif %}
-                </td>
-                <td class="govuk-table__cell" style="width:100px"></td>
-                <td class="govuk-table__cell" style="width:100px"></td>
-              </tr>
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col"></th>
+            <th class="govuk-table__header" scope="col" colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            
           <tr class="govuk-table__row" style="vertical-align:top">
             <th class="govuk-table__header" scope="row" style="width:200px">Send fraud alerts to</th>
             <td class="govuk-table__cell">
@@ -100,19 +93,7 @@
 
       <table class="govuk-table multi-property-table">
           <caption class="govuk-table__caption govuk-!-font-size-24">
-              
-          </caption><br><br>
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th class="govuk-table__header" scope="col"></th>
-              <th class="govuk-table__header" scope="col" colspan="3"></th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row" style="vertical-align:top">
-              <th class="govuk-table__header" scope="row" style="width:200px">Your property</th>
-              <td class="govuk-table__cell">
-                  {% if (data['address-selector-2'] !== undefined) %}
+              {% if (data['address-selector-2'] !== undefined) %}
                 {{ data['address-selector-2'] }}
               {% elif (data['titleNumber'] !== undefined) %}
                 1 Clinton Street, Exeter EX4 1AX
@@ -133,10 +114,15 @@
                   {{ data['address-postcode'] }},
                 {% endif %}
               {% endif %}
-              </td>
-              <td class="govuk-table__cell" style="width:100px"></td>
-              <td class="govuk-table__cell" style="width:100px"></td>
+          </caption><br><br>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col" colspan="3"></th>
             </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            
             <tr class="govuk-table__row" style="vertical-align:top">
               <th class="govuk-table__header" scope="row" style="width:200px">Send fraud alerts to</th>
               <td class="govuk-table__cell">
