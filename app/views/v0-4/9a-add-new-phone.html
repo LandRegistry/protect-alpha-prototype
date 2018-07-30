@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Add new phone
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Add new telephone
+      </h1>
+      <div class="govuk-custom-element-to-hide">
+        <form class="form" action="8a-contact-info-updated" method="post">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24" for="phone">Telephone</label>
+            
+            <input class="govuk-input govuk-input--width-10" id="phone" name="phone" type="text">
+          </div>
+          <input class="govuk-button continueButton" type="submit" value="Submit">
+          
+        </form>
+      </div>
+
+  </div>
+
+  <script>
+
+
+    let itemToAddCheck = sessionStorage.getItem('item-to-update');
+    if (itemToAddCheck === 'add first telephone to first property') {
+      document.querySelector('.govuk-input').setAttribute('name', 'add-first-telephone-to-first-property');
+    } else if (itemToAddCheck === 'add second telephone to first property') {
+      document.querySelector('.govuk-input').setAttribute('name', 'add-second-telephone-to-first-property');
+    } else if (itemToAddCheck === 'add first telephone to second property') {
+      document.querySelector('.govuk-input').setAttribute('name', 'add-first-telephone-to-second-property')
+    } else if (itemToAddCheck === 'add second telephone to second property') {
+      document.querySelector('.govuk-input').setAttribute('name', 'add-second-telephone-to-second-property');
+    }
+    console.log(itemToAddCheck);
+
+    document.querySelector('.continueButton').onclick = function() {
+      if (itemToAddCheck === 'add first telephone to first property') {
+        sessionStorage.setItem('firstTelephoneToFirstProperty', 'yes');
+      } else if (itemToAddCheck === 'add second telephone to first property') {
+        sessionStorage.setItem('secondTelephoneToFirstProperty', 'yes');
+      } else if (itemToAddCheck === 'add first telephone to second property') {
+        sessionStorage.setItem('firstTelephoneToSecondProperty', 'yes');
+      } else if (itemToAddCheck === 'add second telephone to second property') {
+        sessionStorage.setItem('secondTelephoneToSecondProperty', 'yes');
+      }
+    }
+  </script>
+  
+{% endblock %}

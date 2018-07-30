@@ -230,7 +230,11 @@ nav h1 {
 
     & dd {
         margin-inline-start: 0;
-        -webkit-margin-inline-start 0;
+        -webkit-margin-inline-start: 0;
         margin-bottom: 2em !important;
     }
+}
+
+.action-cell {
+    width: 100px !important;
 }

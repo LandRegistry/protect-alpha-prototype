@@ -1,0 +1,165 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your contact details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Check your contact details
+      </h1>
+      <p>Check and confirm your contact details with HM Land Registry.</p>
+
+      <p style="margin-top:2em"><a href="#">Add same contact details for all the properties</a></p>
+
+      <table class="govuk-table" style="margin-bottom:5em">
+        <caption class="govuk-table__caption">
+            {% if (data['address-selector'] !== undefined) %}
+              {{ data['address-selector'] }}
+            {% elif (data['titleNumber'] !== undefined) %}
+              1 Clinton Street, Exeter EX4 1AX
+            {% else %}
+              {% if (data['address-line-1']) %}
+                {{ data['address-line-1'] }},
+              {% endif %}
+              {% if (data['address-line-2']) %}
+                {{ data['address-line-2'] }},
+              {% endif %}
+              {% if (data['address-town']) %}
+                {{ data['address-town'] }},
+              {% endif %}
+              {% if (data['address-county']) %}
+                {{ data['address-county'] }},
+              {% endif %}
+              {% if (data['address-postcode']) %}
+                {{ data['address-postcode'] }},
+              {% endif %}
+            {% endif %}
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col"></th>
+            <th class="govuk-table__header" scope="col" colspan="3">Contact details</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row">Postal address</th>
+            <td class="govuk-table__cell">
+                1 Clinton Street, Exeter EX4 1AX
+                <br>
+                <a class="add-new-address" href="add-new-address">+ Add new</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px"><a href="#">Change</a></td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+          </tr>
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row">Email</th>
+            <td class="govuk-table__cell">
+                <a class="add-new-email" href="add-new-email">+ Add new</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+          </tr>
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row">Telephone</th>
+            <td class="govuk-table__cell">
+                <a href="add-new-telephone" class="add-new-telephone">+ Add new</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+          </tr>
+        </tbody>
+
+      </table>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption">
+            {% if (data['address-selector-2'] !== undefined) %}
+              {{ data['address-selector-2'] }}
+            {% elif (data['titleNumber'] !== undefined) %}
+              3 Clinton Street, Exeter EX4 1AX
+            {% else %}
+              {% if (data['address-line-1']) %}
+                {{ data['address-line-1'] }},
+              {% endif %}
+              {% if (data['address-line-2']) %}
+                {{ data['address-line-2'] }},
+              {% endif %}
+              {% if (data['address-town']) %}
+                {{ data['address-town'] }},
+              {% endif %}
+              {% if (data['address-county']) %}
+                {{ data['address-county'] }},
+              {% endif %}
+              {% if (data['address-postcode']) %}
+                {{ data['address-postcode'] }},
+              {% endif %}
+            {% endif %}
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col"></th>
+            <th class="govuk-table__header" scope="col" colspan="3">Contact details</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row">Postal address</th>
+            <td class="govuk-table__cell">
+                1 Clinton Street, Exeter EX4 1AX
+                <br>
+                <a class="plus-add" href="#">+ Add new</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px"><a href="#">Change</a></td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+          </tr>
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row">Email</th>
+            <td class="govuk-table__cell">
+                email@email.com
+                <br>
+                <a href="#">+ Add new</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px"><a href="#">Change</a></td>
+            <td class="govuk-table__cell" style="width:100px"><a href="#">Delete</a></td>
+          </tr>
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row">Telephone</th>
+            <td class="govuk-table__cell">
+                <a href="#">+ Add new</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+          </tr>
+        </tbody>
+
+      </table>
+      <h2 class="govuk-heading-m">
+        No changes required?
+      </h2>
+      <p><a href="address-lookup">Find another property</a> or <a href="https://gov.uk">exit the service</a> (your contact details will not change).</p>
+
+    </div>
+
+  </div>
+{% endblock %}

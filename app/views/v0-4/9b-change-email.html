@@ -1,0 +1,63 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Change email
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Change your email
+      </h1>
+      <div class="govuk-custom-element-to-hide">
+        <form class="form" action="8a-contact-info-updated" method="post">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24" for="email">Email</label>
+            
+            <input class="govuk-input govuk-input--width-10" id="email" name="email" type="text">
+          </div>
+          <input class="govuk-button continueButton" type="submit" value="Submit">
+          
+        </form>
+      </div>
+
+  </div>
+
+  <script>
+
+
+    let itemToChangeCheck = sessionStorage.getItem('item-to-update');
+    if (itemToChangeCheck === 'change first email of first property') {
+      document.querySelector('.govuk-input').setAttribute('name', 'change-first-email-of-first-property');
+    } else if (itemToChangeCheck === 'change second email of first property') {
+      document.querySelector('.govuk-input').setAttribute('name', 'change-second-email-of-first-property');
+    } else if (itemToChangeCheck === 'change first email of second property') {
+      document.querySelector('.govuk-input').setAttribute('name', 'change-first-email-of-second-property');
+    } else if (itemToChangeCheck === 'change second email of second property') {
+      document.querySelector('.govuk-input').setAttribute('name', 'change-second-email-of-second-property');
+    }
+    console.log(itemToChangeCheck);
+
+    
+  </script>
+  
+{% endblock %}

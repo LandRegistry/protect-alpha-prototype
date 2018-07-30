@@ -1,0 +1,291 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirmation
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-full">
+
+    <div class="govuk-panel govuk-panel--confirmation govuk-!-margin-bottom-6">
+      <h1 class="govuk-panel__title">
+          New contact details sent to HM Land Registry
+      </h1>
+      <div class="govuk-panel__body">
+        Your reference number<br><strong>ABC1234</strong>
+      </div>
+    </div>
+    <h2 class="govuk-heading-m">What happens next?</h2>
+
+    <p>Your new contact details have been sent to HM Land Registry.</p>
+
+    <p>HM Land Registry will:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>check that you own this property</li>
+      <li>approve your new contact details</li>
+      <li>add your (new) contact details to your title deed</li>
+      <li>send you a tbc to confirm this change</li>
+    </ul>
+
+    <p>We will send confirmation to your:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>old contact details (the ones on the title register before you changed them)</li>
+      <li>new contact details (the ones you changed today)</li>
+    </ul>
+
+    <h2 class="govuk-heading-m">
+      What happens if a fraudster tries to change my contact details?
+    </h2>
+
+    <p>If HM Land Registry suspects that someone is not the owner of a property, we will open a fraud enquiry. We will not publish any new contact details if we suspect fraud.</p>
+
+    <h3 class="govuk-heading-s">
+      Contact HM Land Registry
+    </h3>
+
+    <p>Telephone: 0123 456 7890</p>
+    <p>Email: support@landregistry.gov.uk</p>
+
+    <!-- <p>
+      We will send confirmation to:<br><span class="govuk-!-font-weight-bold">1 Clinton Street EX4 1AX</span> and <span class="govuk-!-font-weight-bold">
+          {% if (data['added-item'] !== undefined) %}
+            {{ data['added-item'] }}
+          {% elif (data['added-item-2'] !== undefined) %}
+            {{ data['added-item-2'] }}
+          {% elif (data['added-item-email'] !== undefined) %}
+            {{ data['added-item-email'] }}
+          {% elif (data['added-item-email-2'] !== undefined) %}
+            {{ data['added-item-email-2'] }}
+          {% elif (data['added-item-phone'] !== undefined) %}
+            {{ data['added-item-phone'] }}
+          {% elif (data['added-item-phone-2'] !== undefined) %}
+            {{ data['added-item-phone-2'] }}
+          {% endif %}
+      </span>.
+    </p> -->
+        <table class="govuk-table">
+            <caption class="govuk-table__caption govuk-!-font-size-24">
+                {% if (data['address-selector'] !== undefined) %}
+                      {{ data['address-selector'] }}
+                    {% elif (data['titleNumber'] !== undefined) %}
+                      1 Clinton Street, Exeter EX4 1AX
+                    {% else %}
+                      {% if (data['address-line-1']) %}
+                        {{ data['address-line-1'] }},
+                      {% endif %}
+                      {% if (data['address-line-2']) %}
+                        {{ data['address-line-2'] }},
+                      {% endif %}
+                      {% if (data['address-town']) %}
+                        {{ data['address-town'] }},
+                      {% endif %}
+                      {% if (data['address-county']) %}
+                        {{ data['address-county'] }},
+                      {% endif %}
+                      {% if (data['address-postcode']) %}
+                        {{ data['address-postcode'] }},
+                      {% endif %}
+                    {% endif %}
+            </caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col"></th>
+                <th class="govuk-table__header" scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+              
+              <tr class="govuk-table__row" style="vertical-align:top">
+                <th class="govuk-table__header" scope="row" style="width:200px">Postal address</th>
+                <td class="govuk-table__cell">
+                    {% if (data['first-address-to-first-property'] !== undefined) %}
+                      {{ data['first-address-to-first-property'] }}
+                    {% else %}
+                      1 Clinton Street, Exeter EX4 1AX
+                    {% endif %}
+                    <br>
+                    
+                    <span class="second-address-for-first-property hidden">
+                      {% if (data['change-second-address-to-first-property'] !== undefined) %}
+                        {{ data['change-second-address-to-first-property'] }}
+                      {% else %}
+                        {{ data['second-address-to-first-property'] }}
+                      {% endif %}
+                    </span>
+                    
+                    <span class="third-address-for-first-property hidden">
+                      {% if (data['change-third-address-to-first-property'] !== undefined) %}
+                        {{ data['change-third-address-to-first-property'] }}
+                      {% else %}
+                        {{ data['third-address-to-first-property'] }}
+                      {% endif %}
+                    </span>
+                    
+                </td>
+                
+              </tr>
+              <tr class="govuk-table__row email-row" style="vertical-align:top">
+                <th class="govuk-table__header" scope="row" style="width:200px">Email</th>
+                <td class="govuk-table__cell">
+                  
+                  {% if (data['change-first-email-of-first-property'] !== undefined) %}
+                    {{ data['change-first-email-of-first-property'] }}<br>
+                  {% elif (data['add-first-email-to-first-property'] !== undefined) %}
+                    {{ data['add-first-email-to-first-property'] }}<br>
+                  {% else %}
+                    Not provided
+                  {% endif %}
+                    
+                  {% if (data['change-second-email-of-first-property'] !==undefined) %}
+                    {{ data['change-second-email-of-first-property'] }}
+                  {% elif (data['add-second-email-to-first-property'] !== undefined) %}
+                    {{ data['add-second-email-to-first-property'] }}<br>
+                  {% endif %}
+                </td>
+                
+              </tr>
+              <tr class="govuk-table__row phone-row" style="vertical-align:top">
+                  <th class="govuk-table__header" scope="row" style="width:200px">Telephone</th>
+                  <td class="govuk-table__cell">
+                    
+                    {% if (data['change-first-telephone-of-first-property'] !== undefined) %}
+                      {{ data['change-first-telephone-of-first-property'] }}<br>
+                    {% elif (data['add-first-telephone-to-first-property'] !== undefined) %}
+                      {{ data['add-first-telephone-to-first-property'] }}<br>
+                    {% else %}
+                      Not provided
+                    {% endif %}
+                      
+                    {% if (data['change-second-telephone-of-first-property'] !==undefined) %}
+                      {{ data['change-second-telephone-of-first-property'] }}
+                    {% elif (data['add-second-telephone-to-first-property'] !== undefined) %}
+                      {{ data['add-second-telephone-to-first-property'] }}<br>
+                    {% endif %}
+                  </td>
+                  
+                </tr>
+            </tbody>
+    
+          </table>
+    
+          <table class="govuk-table multi-property-table">
+              <caption class="govuk-table__caption govuk-!-font-size-24">
+                  {% if (data['address-selector-2'] !== undefined) %}
+                            {{ data['address-selector-2'] }}
+                          {% elif (data['titleNumber'] !== undefined) %}
+                            1 Clinton Street, Exeter EX4 1AX
+                          {% else %}
+                            {% if (data['address-line-1']) %}
+                              {{ data['address-line-1'] }},
+                            {% endif %}
+                            {% if (data['address-line-2']) %}
+                              {{ data['address-line-2'] }},
+                            {% endif %}
+                            {% if (data['address-town']) %}
+                              {{ data['address-town'] }},
+                            {% endif %}
+                            {% if (data['address-county']) %}
+                              {{ data['address-county'] }},
+                            {% endif %}
+                            {% if (data['address-postcode']) %}
+                              {{ data['address-postcode'] }},
+                            {% endif %}
+                          {% endif %}
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col"></th>
+                  <th class="govuk-table__header" scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                  
+                <tr class="govuk-table__row" style="vertical-align:top">
+                  <th class="govuk-table__header" scope="row" style="width:200px">Postal address</th>
+                  <td class="govuk-table__cell">
+                      1 Clinton Street, Exeter EX4 1AX
+                      
+                  </td>
+                </tr>
+                <tr class="govuk-table__row" style="vertical-align:top">
+                  <th class="govuk-table__header" scope="row" style="width:200px">Email</th>
+                  <td class="govuk-table__cell">
+                      {% if (data['change-first-email-of-second-property'] !== undefined) %}
+                        {{ data['change-first-email-of-second-property'] }}<br>
+                      {% elif (data['add-first-email-to-second-property'] !== undefined) %}
+                        {{ data['add-first-email-to-second-property'] }}<br>
+                      {% else %}
+                        Not provided
+                      {% endif %}
+                    
+                      {% if (data['change-second-email-of-second-property'] !==undefined) %}
+                        {{ data['change-second-email-of-second-property'] }}
+                      {% elif (data['add-second-email-to-second-property'] !== undefined) %}
+                        {{ data['add-second-email-to-second-property'] }}<br>
+                      {% endif %}
+                      
+                  </td>
+                </tr>
+                <tr class="govuk-table__row" style="vertical-align:top">
+                  <th class="govuk-table__header" scope="row" style="width:200px">Telephone</th>
+                  <td class="govuk-table__cell">
+                      {% if (data['change-first-telephone-of-second-property'] !== undefined) %}
+                        {{ data['change-first-telephone-of-second-property'] }}<br>
+                      {% elif (data['add-first-telephone-to-second-property'] !== undefined) %}
+                        {{ data['add-first-telephone-to-second-property'] }}<br>
+                      {% else %}
+                        Not provided
+                      {% endif %}
+                        
+                      {% if (data['change-second-telephone-of-second-property'] !==undefined) %}
+                        {{ data['change-second-telephone-of-second-property'] }}
+                      {% elif (data['add-second-telephone-to-second-property'] !== undefined) %}
+                        {{ data['add-second-telephone-to-second-property'] }}<br>
+                      {% endif %}
+                  </td>
+                </tr>
+              </tbody>
+      
+            </table>
+  
+
+    <p class="update-another-link"><a href="contact-info-multi-address-another">Update contact details for another property</a></p>
+    <p>Or <a href="https://gov.uk">exit the service</a>.</p>
+
+    
+
+
+  </div>
+</div>
+<script>
+  let propertyCheck = sessionStorage.getItem('propNumber');
+      let whichProperty = sessionStorage.getItem('whichProperty');
+  console.log(propertyCheck);
+  if (whichProperty === 'first') {
+        document.querySelector('.single-prop-row').classList.remove('hidden');
+        document.querySelector('.multi-prop-row').classList.add('hidden');
+      } else if (whichProperty === 'first') {
+        document.querySelector('.single-prop-row').classList.add('hidden');
+        document.querySelector('.multi-prop-row').classList.remove('hidden');
+      }
+
+  let privateCheck = sessionStorage.getItem('privateCheck');
+  console.log(privateCheck);
+</script>
+{% endblock %}

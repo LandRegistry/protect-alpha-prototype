@@ -97,7 +97,7 @@ router.get('/*/update-details-multi-exists', function (req, res) {
 })
 
 // Title numbers (e.g. v0-4/title-number)
-router.get('/*/title-number-entry', function (req, res) {
+router.get('/v0-4/title-number-entry', function (req, res) {
   var titleExists = req.query.title
 
   if (titleExists === 'no') {
@@ -106,5 +106,33 @@ router.get('/*/title-number-entry', function (req, res) {
     res.render('v0-4/title-number-entry')
   }
 })
+
+/* ################################################### */
+/* #################€€ NEW ROUTES #################### */
+/* ################################################### */
+
+/* v0.4 */
+/* title number */
+router.get('/v0-4-new/3b-title-number-entry', function (req, res) {
+  var titleExists = req.query.title
+
+  if (titleExists === 'no') {
+    res.redirect('3a-address-lookup')
+  } else {
+    res.render('v0-4-new/3b-title-number-entry')
+  }
+})
+
+router.get('/v0-4-new/6b-verification-intro', function (req, res) {
+  var toAdd = req.query.signIn
+
+  if (toAdd === "I've used Verify before") {
+    // Redirect to the relevant page
+    res.redirect('6a-verification-choose')
+  } else {
+    res.render('v0-4-new/6b-verification-intro')
+  }
+})
+
 
 module.exports = router

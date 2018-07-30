@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Are you sure you want to delete this telephone number?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      
+      <form id="govuk-custom-add-contact-form" class="form" action="8a-contact-info-updated" method="get">
+
+        <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+                    <h1 class="govuk-fieldset__heading">
+                        Are you sure you want to delete this telephone number?
+                    </h1>
+                    <p class="to-be-deleted-item" style="margin-top:1em">
+                        {% if (data['change-first-telephone-of-first-property'] !== undefined) %}
+                            {{ data['change-first-telephone-of-first-property'] }}<br>
+                        {% elif (data['add-first-telephone-to-first-property'] !== undefined) %}
+                            {{ data['add-first-telephone-to-first-property'] }}<br>
+                        {% endif %}
+                    </p>
+                </legend>
+                <div class="govuk-radios" data-module="radios">
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="deleteYes" name="deleteFirstTelephone" type="radio" value="yes">
+                        <label class="govuk-label govuk-radios__label" for "deleteYes">
+                            Yes
+                        </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="deleteNo" name="deleteFirstTelephone" type="radio" value="no">
+                        <label class="govuk-label govuk-radios__label" for "deleteNo">
+                            No
+                        </label>
+                    </div>
+                    
+                </div>
+            </fieldset>
+        </div>
+
+        <input id="delete-button" class="govuk-button" type="submit" value="Continue">
+
+      </form>
+      
+      
+    </div>
+
+  </div>
+  <script>
+      let itemToDeleteCheck = sessionStorage.getItem('item-to-update');
+      console.log(itemToDeleteCheck);
+      
+  </script>
+{% endblock %}
+
