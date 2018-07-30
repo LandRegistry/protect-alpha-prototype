@@ -223,7 +223,9 @@
               <th class="govuk-table__header" scope="row" style="width:200px">Send fraud alerts to</th>
               <td class="govuk-table__cell"> 
                 
-                {% if (data['first-address-to-second-property'] !== undefined) %}
+                  {% if (data['change-first-address-to-second-property'] !== undefined) %}
+                    {{ data['change-first-address-to-second-property'] }}  
+                  {% elif (data['first-address-to-second-property'] !== undefined) %}
                     {{ data['first-address-to-second-property'] }}
                   {% else %}
                     1 Clinton Street, Exeter EX4 1AX

@@ -99,19 +99,7 @@
     </p> -->
         <table class="govuk-table">
             <caption class="govuk-table__caption govuk-!-font-size-24">
-                
-            </caption>
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th class="govuk-table__header" scope="col"></th>
-                <th class="govuk-table__header" scope="col"></th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body">
-                <tr class="govuk-table__row" style="vertical-align:top">
-                    <th class="govuk-table__header" scope="row">Your property</th>
-                    <td class="govuk-table__cell">
-                        {% if (data['address-selector'] !== undefined) %}
+                {% if (data['address-selector'] !== undefined) %}
                           {{ data['address-selector'] }}
                         {% elif (data['titleNumber'] !== undefined) %}
                           1 Clinton Street, Exeter EX4 1AX
@@ -132,16 +120,25 @@
                             {{ data['address-postcode'] }},
                           {% endif %}
                         {% endif %}
-                    </td>
-                  </tr>
+            </caption>
+            <thead class="govuk-table__head">
+              <tr class="govuk-table__row">
+                <th class="govuk-table__header" scope="col"></th>
+                <th class="govuk-table__header" scope="col"></th>
+              </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                
               
               <tr class="govuk-table__row" style="vertical-align:top">
-                <th class="govuk-table__header" scope="row">Send fraud alerts to</th>
+                <th class="govuk-table__header" scope="row" style="width:250px">Send fraud alerts to</th>
                 <td class="govuk-table__cell">
-                    {% if (data['first-address-to-first-property'] !== undefined) %}
-                      {{ data['first-address-to-first-property'] }}
+                    {% if (data['change-first-address-to-first-property'] !== undefined) %}
+                      {{ data['change-first-address-to-first-property'] }}
+                    {% elif (data['first-address-to-first-property'] !== undefined) %}
+                        {{ data['first-address-to-first-property'] }}
                     {% else %}
-                      1 Clinton Street, Exeter EX4 1AX
+                        1 Clinton Street, Exeter EX4 1AX
                     {% endif %}
                     <br>
                     
@@ -165,7 +162,7 @@
                 
               </tr>
               <tr class="govuk-table__row email-row" style="vertical-align:top">
-                <th class="govuk-table__header" scope="row">Email fraud alerts to</th>
+                <th class="govuk-table__header" scope="row" style="width:250px">Email fraud alerts to</th>
                 <td class="govuk-table__cell">
                   
                   {% if (data['change-first-email-of-first-property'] !== undefined) %}
@@ -185,7 +182,7 @@
                 
               </tr>
               <tr class="govuk-table__row phone-row" style="vertical-align:top">
-                  <th class="govuk-table__header" scope="row">Text fraud alerts to</th>
+                  <th class="govuk-table__header" scope="row" style="width:250px">Text fraud alerts to</th>
                   <td class="govuk-table__cell">
                     
                     {% if (data['change-first-telephone-of-first-property'] !== undefined) %}
@@ -210,19 +207,7 @@
           <br><br>
           <table class="govuk-table multi-property-table">
               <caption class="govuk-table__caption govuk-!-font-size-24">
-                  
-              </caption>
-              <thead class="govuk-table__head">
-                <tr class="govuk-table__row">
-                  <th class="govuk-table__header" scope="col"></th>
-                  <th class="govuk-table__header" scope="col"></th>
-                </tr>
-              </thead>
-              <tbody class="govuk-table__body">
-                  <tr class="govuk-table__row" style="vertical-align:top">
-                      <th class="govuk-table__header" scope="row">Your property</th>
-                      <td class="govuk-table__cell">
-                          {% if (data['address-selector-2'] !== undefined) %}
+                  {% if (data['address-selector-2'] !== undefined) %}
                         {{ data['address-selector-2'] }}
                       {% elif (data['titleNumber'] !== undefined) %}
                         1 Clinton Street, Exeter EX4 1AX
@@ -243,17 +228,30 @@
                           {{ data['address-postcode'] }},
                         {% endif %}
                       {% endif %}
-                      </td>
-                    </tr>
+              </caption>
+              <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                  <th class="govuk-table__header" scope="col"></th>
+                  <th class="govuk-table__header" scope="col"></th>
+                </tr>
+              </thead>
+              <tbody class="govuk-table__body">
+                  
                 <tr class="govuk-table__row" style="vertical-align:top">
-                  <th class="govuk-table__header" scope="row">Send fraud alerts to</th>
+                  <th class="govuk-table__header" scope="row" style="width:250px">Send fraud alerts to</th>
                   <td class="govuk-table__cell">
-                      1 Clinton Street, Exeter EX4 1AX
+                      {% if (data['change-first-address-to-second-property'] !== undefined) %}
+                        {{ data['change-first-address-to-second-property'] }}  
+                      {% elif (data['first-address-to-second-property'] !== undefined) %}
+                        {{ data['first-address-to-second-property'] }}
+                      {% else %}
+                        1 Clinton Street, Exeter EX4 1AX
+                      {% endif %}
                       
                   </td>
                 </tr>
                 <tr class="govuk-table__row" style="vertical-align:top">
-                  <th class="govuk-table__header" scope="row">Email fraud alerts to</th>
+                  <th class="govuk-table__header" scope="row" style="width:250px">Email fraud alerts to</th>
                   <td class="govuk-table__cell">
                       {% if (data['change-first-email-of-second-property'] !== undefined) %}
                         {{ data['change-first-email-of-second-property'] }}<br>
@@ -272,7 +270,7 @@
                   </td>
                 </tr>
                 <tr class="govuk-table__row" style="vertical-align:top">
-                  <th class="govuk-table__header" scope="row">Text fraud alerts to</th>
+                  <th class="govuk-table__header" scope="row" style="width:250px">Text fraud alerts to</th>
                   <td class="govuk-table__cell">
                       {% if (data['change-first-telephone-of-second-property'] !== undefined) %}
                         {{ data['change-first-telephone-of-second-property'] }}<br>
