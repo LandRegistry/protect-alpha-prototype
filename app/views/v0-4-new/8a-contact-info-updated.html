@@ -113,15 +113,15 @@
             <td class="govuk-table__cell">
               <a href="9a-add-new-email" class="add-first-email-to-first-property">+ Add new</a>
               {% if (data['change-first-email-of-first-property'] !== undefined) %}
-                {{ data['change-first-email-of-first-property'] }}<br>
+                {{ data['change-first-email-of-first-property'] }} (private)<br>
               {% elif (data['add-first-email-to-first-property'] !== undefined) %}
-                {{ data['add-first-email-to-first-property'] }}<br>
+                {{ data['add-first-email-to-first-property'] }} (private)<br>
               {% endif %}
                 <a href="9a-add-new-email" class="add-second-email-to-first-property hidden">+ Add new</a>
               {% if (data['change-second-email-of-first-property'] !==undefined) %}
-                {{ data['change-second-email-of-first-property'] }}
+                {{ data['change-second-email-of-first-property'] }} (private)<br>
               {% elif (data['add-second-email-to-first-property'] !== undefined) %}
-                {{ data['add-second-email-to-first-property'] }}<br>
+                {{ data['add-second-email-to-first-property'] }} (private)<br>
               {% endif %}
             </td>
             <td class="govuk-table__cell" style="width:100px">
@@ -144,15 +144,15 @@
               <td class="govuk-table__cell">
                 <a href="9a-add-new-phone" class="add-first-telephone-to-first-property">+ Add new</a>
                 {% if (data['change-first-telephone-of-first-property'] !== undefined) %}
-                  {{ data['change-first-telephone-of-first-property'] }}<br>
+                  {{ data['change-first-telephone-of-first-property'] }} (private)<br>
                 {% elif (data['add-first-telephone-to-first-property'] !== undefined) %}
-                  {{ data['add-first-telephone-to-first-property'] }}<br>
+                  {{ data['add-first-telephone-to-first-property'] }} (private)<br>
                 {% endif %}
                   <a href="9a-add-new-phone" class="add-second-telephone-to-first-property hidden">+ Add new</a>
                 {% if (data['change-second-telephone-of-first-property'] !==undefined) %}
-                  {{ data['change-second-telephone-of-first-property'] }}
+                  {{ data['change-second-telephone-of-first-property'] }} (private)<br>
                 {% elif (data['add-second-telephone-to-first-property'] !== undefined) %}
-                  {{ data['add-second-telephone-to-first-property'] }}<br>
+                  {{ data['add-second-telephone-to-first-property'] }} (private)<br>
                 {% endif %}
               </td>
               <td class="govuk-table__cell" style="width:100px">
@@ -164,7 +164,7 @@
               </td>
               <td class="govuk-table__cell" style="width:100px">
                   <a  class="delete-first-telephone-of-first-property hidden" href="9c-delete-first-telephone-of-first-property">Delete</a>
-                  {% if (data['addd-second-telephone-to-first-property'] !== undefined) %}
+                  {% if (data['add-second-telephone-to-first-property'] !== undefined) %}
                     <br>
                   {% endif %}
                   <a  class="delete-second-telephone-of-first-property hidden" href="9c-delete-second-telephone-of-first-property">Delete</a>
@@ -272,15 +272,15 @@
               <td class="govuk-table__cell">
                   <a href="9a-add-new-email" class="add-first-email-to-second-property">+ Add new</a>
                   {% if (data['change-first-email-of-second-property'] !== undefined) %}
-                    {{ data['change-first-email-of-second-property'] }}<br>
+                    {{ data['change-first-email-of-second-property'] }} (private)<br>
                   {% elif (data['add-first-email-to-second-property'] !== undefined) %}
-                    {{ data['add-first-email-to-second-property'] }}<br>
+                    {{ data['add-first-email-to-second-property'] }} (private)<br>
                   {% endif %}
                     <a href="9a-add-new-email" class="add-second-email-to-second-property hidden">+ Add new</a>
                   {% if (data['change-second-email-of-second-property'] !==undefined) %}
-                    {{ data['change-second-email-of-second-property'] }}
+                    {{ data['change-second-email-of-second-property'] }} (private)<br>
                   {% elif (data['add-second-email-to-second-property'] !== undefined) %}
-                    {{ data['add-second-email-to-second-property'] }}<br>
+                    {{ data['add-second-email-to-second-property'] }} (private)<br>
                   {% endif %}
               </td>
               <td class="govuk-table__cell" style="width:100px">
@@ -303,15 +303,15 @@
                 <td class="govuk-table__cell">
                   <a href="9a-add-new-phone" class="add-first-telephone-to-second-property">+ Add new</a>
                   {% if (data['change-first-telephone-of-second-property'] !== undefined) %}
-                    {{ data['change-first-telephone-of-second-property'] }}<br>
+                    {{ data['change-first-telephone-of-second-property'] }} (private)<br>
                   {% elif (data['add-first-telephone-to-second-property'] !== undefined) %}
-                    {{ data['add-first-telephone-to-second-property'] }}<br>
+                    {{ data['add-first-telephone-to-second-property'] }} (private)<br>
                   {% endif %}
                     <a href="9a-add-new-phone" class="add-second-telephone-to-second-property hidden">+ Add new</a>
                   {% if (data['change-second-telephone-of-second-property'] !==undefined) %}
-                    {{ data['change-second-telephone-of-second-property'] }}
+                    {{ data['change-second-telephone-of-second-property'] }} (private)<br>
                   {% elif (data['add-second-telephone-to-second-property'] !== undefined) %}
-                    {{ data['add-second-telephone-to-second-property'] }}<br>
+                    {{ data['add-second-telephone-to-second-property'] }} (private)<br>
                   {% endif %}
                 </td>
                 <td class="govuk-table__cell" style="width:100px">
