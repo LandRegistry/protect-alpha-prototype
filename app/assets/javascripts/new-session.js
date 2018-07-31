@@ -52,6 +52,7 @@ if (thirdAddressToFirstProperty === 'yes') {
     /* hide the email and telephone options because we have reached 3 */
     document.querySelector('.email-row').classList.add('hidden');
     document.querySelector('.phone-row').classList.add('hidden');
+    document.querySelector('.max-number-alert').classList.remove('hidden');
 }
 if (firstEmailToFirstProperty === 'yes') {
     /* hides the add corresponding add button */
@@ -74,6 +75,7 @@ if (secondEmailToFirstProperty === 'yes') {
     /* hide the add address button options because we have reached 3 */
     document.querySelector('.add-second-address-to-first-property').classList.add('hidden');
     document.querySelector('.add-third-address-to-first-property').classList.add('hidden');
+    document.querySelector('.max-number-alert').classList.remove('hidden');
 }
 if (firstTelephoneToFirstProperty === 'yes') {
     /* hides the add corresponding add button */
@@ -96,6 +98,7 @@ if (secondTelephoneToFirstProperty === 'yes') {
     /* hide the add address button options because we have reached 3 */
     document.querySelector('.add-second-address-to-first-property').classList.add('hidden');
     document.querySelector('.add-third-address-to-first-property').classList.add('hidden');
+    document.querySelector('.max-number-alert').classList.remove('hidden');
 }
 
 /* click rules */
@@ -195,6 +198,7 @@ if (thirdAddressToSecondProperty === 'yes') {
     /* hide the email and telephone options because we have reached 3 */
     document.querySelector('.email-row-second-property').classList.add('hidden');
     document.querySelector('.phone-row-second-property').classList.add('hidden');
+    document.querySelector('.max-number-alert-second-property').classList.remove('hidden');
 }
 if (firstEmailToSecondProperty === 'yes') {
     console.log("The message is " + firstEmailToSecondProperty)
@@ -218,6 +222,7 @@ if (secondEmailToSecondProperty === 'yes') {
     /* hide the add address button options because we have reached 3 */
     document.querySelector('.add-second-address-to-second-property').classList.add('hidden');
     document.querySelector('.add-third-address-to-second-property').classList.add('hidden');
+    ocument.querySelector('.max-number-alert-second-property').classList.remove('hidden');
 }
 if (firstTelephoneToSecondProperty === 'yes') {
     console.log('first telephone to first property');
@@ -241,6 +246,7 @@ if (secondTelephoneToSecondProperty === 'yes') {
     /* hide the add address button options because we have reached 3 */
     document.querySelector('.add-second-address-to-second-property').classList.add('hidden');
     document.querySelector('.add-third-address-to-second-property').classList.add('hidden');
+    ocument.querySelector('.max-number-alert-second-property').classList.remove('hidden');
 }
 
 /* click rules */
