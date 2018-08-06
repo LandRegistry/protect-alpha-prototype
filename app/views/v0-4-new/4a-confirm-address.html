@@ -29,7 +29,7 @@
       </h1>
       <h2 class="govuk-heading-s multiplePropertyElements hidden">Property 1</h2>
       <p class="govuk-body govuk-!-font-size-24">
-        {% if data['address-selector'] !== undefined %}
+        {% if (data['address-selector'] !== 'undefined') %}
           {{ data['address-selector'] }}
         {% else %}
           {% if (data['address-line-1']) %}

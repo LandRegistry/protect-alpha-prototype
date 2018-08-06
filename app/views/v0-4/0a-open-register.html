@@ -1,0 +1,70 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  What is the open register?
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Protect my property",
+        "href": "start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+      <h1 class="govuk-heading-l">
+        What is the open register?
+      </h1>
+      
+      <p>The <a href="https://www.gov.uk/search-property-information-land-registry">open register is a database of property information</a> in the UK. On <a href="https://gov.uk"></a>GOV.UK, this database is called 'Find property information'.</p>
+
+      <p>You can search the open register to find out:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>who owns the property</li>
+          <li>what they paid for it</li>
+          <li>if there's a mortgage on it</li>
+      </ul>
+
+      <h2 class="govuk-heading-m">
+          Information you do not have to publish on the open register
+      </h2>
+
+      <p>You can opt out of publishing your:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>email</li>
+          <li>phone number</li>
+      </ul>
+
+      <p>Opt out by ticking 'Hide this information' when you update your contact details.</p>
+
+      <h2 class="govuk-heading-m">
+          Information that must be published on the open register
+      </h2>
+
+      <p>You cannot opt out of publishing your:</p>
+      <ul class="govuk-list govuk-list--bullet">
+          <li>address (property you own)</li>
+          <li>address (correspondence)</li>
+          <li>lender</li>
+          <li>price sold</li>
+      </ul>
+
+      <p>HM Land Registry published this information for transparency reasons (we must make data we hold publicly available).</p>
+
+    </div>
+
+  </div>
+{% endblock %}
