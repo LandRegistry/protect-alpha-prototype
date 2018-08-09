@@ -32,6 +32,7 @@ var useHttps = process.env.USE_HTTPS || config.useHttps
 var useBrowserSync = config.useBrowserSync
 var analyticsId = process.env.ANALYTICS_TRACKING_ID
 var gtmId = process.env.GOOGLE_TAG_MANAGER_TRACKING_ID
+var gaKey = process.env.GA_KEY
 
 env = env.toLowerCase()
 useAuth = useAuth.toLowerCase()
@@ -249,6 +250,7 @@ app.post(/^\/([^.]+)$/, function (req, res) {
 
 console.log('\nGOV.UK Prototype Kit v' + releaseVersion)
 console.log('\nNOTICE: the kit is for building prototypes, do not use it for production services.')
+
 
 // Find a free port and start the server
 utils.findAvailablePort(app, function (port) {
