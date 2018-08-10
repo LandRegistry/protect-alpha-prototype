@@ -134,5 +134,28 @@ router.get('/v0-4-new/6b-verification-intro', function (req, res) {
   }
 })
 
+/* v0.4.1 */
+/* title number */
+router.get('/v0-4-1/3b-title-number-entry', function (req, res) {
+  var titleExists = req.query.title
+
+  if (titleExists === 'no') {
+    res.redirect('3a-address-lookup')
+  } else {
+    res.render('v0-4-1/3b-title-number-entry')
+  }
+})
+
+router.get('/v0-4-1/6b-verification-intro', function (req, res) {
+  var toAdd = req.query.signIn
+
+  if (toAdd === "I've used Verify before") {
+    // Redirect to the relevant page
+    res.redirect('6a-verification-choose')
+  } else {
+    res.render('v0-4-1/6b-verification-intro')
+  }
+})
+
 
 module.exports = router

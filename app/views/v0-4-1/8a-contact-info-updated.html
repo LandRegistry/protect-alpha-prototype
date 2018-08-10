@@ -1,0 +1,429 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your contact details
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Update my title deed",
+        "href": "1-start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Contact details
+      </h1>
+      <p>Confirm your updated contact details with HM Land Registry.</p>
+      <p class="hidden max-number-alert">You can have up to 3 ways to contact you.</p>
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-!-font-size-24">
+            {% if (data['address-selector'] !== undefined) %}
+                      {{ data['address-selector'] }}
+                    {% elif (data['titleNumber'] !== undefined) %}
+                      5 Clinton Street, Exeter EX4 1AX
+                    {% else %}
+                      {% if (data['address-line-1']) %}
+                        {{ data['address-line-1'] }},
+                      {% endif %}
+                      {% if (data['address-line-2']) %}
+                        {{ data['address-line-2'] }},
+                      {% endif %}
+                      {% if (data['address-town']) %}
+                        {{ data['address-town'] }},
+                      {% endif %}
+                      {% if (data['address-county']) %}
+                        {{ data['address-county'] }},
+                      {% endif %}
+                      {% if (data['address-postcode']) %}
+                        {{ data['address-postcode'] }},
+                      {% endif %}
+                    {% endif %}
+        </caption><br><br>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col"></th>
+            <th class="govuk-table__header" scope="col" colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row" style="width:200px">Send fraud alerts to</th>
+            <td class="govuk-table__cell">
+              {% if (data['change-first-address-to-first-property'] !== undefined) %}
+                {{ data['change-first-address-to-first-property'] }}
+              {% elif (data['first-address-to-first-property'] !== undefined) %}
+                  {{ data['first-address-to-first-property'] }}
+              {% else %}
+                  5 Clinton Street, Exeter EX4 1AX
+              {% endif %}
+                <br>
+                <a class="plus-add add-second-address-to-first-property" href="9a-add-new-address">+ Add new</a>
+                <span class="second-address-for-first-property hidden">
+                  {% if (data['change-second-address-to-first-property'] !== undefined) %}
+                    {{ data['change-second-address-to-first-property'] }}
+                  {% else %}
+                    {{ data['second-address-to-first-property'] }}
+                  {% endif %}
+                </span><br>
+                <a class="plus-add add-third-address-to-first-property hidden" href="9a-add-new-address">+ Add new</a>
+                <span class="third-address-for-first-property hidden">
+                  {% if (data['change-third-address-to-first-property'] !== undefined) %}
+                    {{ data['change-third-address-to-first-property'] }}
+                  {% else %}
+                    {{ data['third-address-to-first-property'] }}
+                  {% endif %}
+                </span>
+                
+            </td>
+            <td class="govuk-table__cell" style="width:100px">
+              <a  class="change-first-address-of-first-property" href="9b-change-address">Change</a>
+              <br>
+              <a  class="change-second-address-of-first-property hidden" href="9b-change-address">Change</a>
+              {% if (data['third-address-to-first-property'] !== undefined) %}
+                <br>
+              {% endif %}
+              <a  class="change-third-address-of-first-property hidden" href="9b-change-address">Change</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px">
+              <br>
+              <a  class="delete-second-address-of-first-property hidden" href="9c-delete-second-address-of-first-property">Delete</a>
+              {% if (data['third-address-to-first-property'] !== undefined) %}
+                <br>
+              {% endif %}
+              <a  class="delete-third-address-of-first-property hidden" href="9c-delete-third-address-of-first-property">Delete</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row email-row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row" style="width:200px">Email fraud alerts to</th>
+            <td class="govuk-table__cell">
+              <a href="9a-add-new-email" class="add-first-email-to-first-property">+ Add new</a>
+              {% if (data['change-first-email-of-first-property'] !== undefined) %}
+                {{ data['change-first-email-of-first-property'] }} (private)<br>
+              {% elif (data['add-first-email-to-first-property'] !== undefined) %}
+                {{ data['add-first-email-to-first-property'] }} (private)<br>
+              {% endif %}
+                <a href="9a-add-new-email" class="add-second-email-to-first-property hidden">+ Add new</a>
+              {% if (data['change-second-email-of-first-property'] !==undefined) %}
+                {{ data['change-second-email-of-first-property'] }} (private)<br>
+              {% elif (data['add-second-email-to-first-property'] !== undefined) %}
+                {{ data['add-second-email-to-first-property'] }} (private)<br>
+              {% endif %}
+            </td>
+            <td class="govuk-table__cell" style="width:100px">
+                <a  class="change-first-email-of-first-property hidden" href="9b-change-email">Change</a>
+                {% if (data['add-second-email-to-first-property'] !== undefined) %}
+                  <br>
+                {% endif %}
+                <a class="change-second-email-of-first-property hidden" href="9b-change-email">Change</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px">
+                <a  class="delete-first-email-of-first-property hidden" href="9c-delete-first-email-of-first-property">Delete</a>
+                {% if (data['addd-second-email-to-first-property'] !== undefined) %}
+                  <br>
+                {% endif %}
+                <a  class="delete-second-email-of-first-property hidden" href="9c-delete-second-email-of-first-property">Delete</a>
+            </td>
+          </tr>
+          <tr class="govuk-table__row phone-row" style="vertical-align:top">
+              <th class="govuk-table__header" scope="row" style="width:200px">Text fraud alerts to</th>
+              <td class="govuk-table__cell">
+                <a href="9a-add-new-phone" class="add-first-telephone-to-first-property">+ Add new</a>
+                {% if (data['change-first-telephone-of-first-property'] !== undefined) %}
+                  {{ data['change-first-telephone-of-first-property'] }} (private)<br>
+                {% elif (data['add-first-telephone-to-first-property'] !== undefined) %}
+                  {{ data['add-first-telephone-to-first-property'] }} (private)<br>
+                {% endif %}
+                  <a href="9a-add-new-phone" class="add-second-telephone-to-first-property hidden">+ Add new</a>
+                {% if (data['change-second-telephone-of-first-property'] !==undefined) %}
+                  {{ data['change-second-telephone-of-first-property'] }} (private)<br>
+                {% elif (data['add-second-telephone-to-first-property'] !== undefined) %}
+                  {{ data['add-second-telephone-to-first-property'] }} (private)<br>
+                {% endif %}
+              </td>
+              <td class="govuk-table__cell" style="width:100px">
+                  <a  class="change-first-telephone-of-first-property hidden" href="9b-change-telephone">Change</a>
+                  {% if (data['add-second-telephone-to-first-property'] !== undefined) %}
+                    <br>
+                  {% endif %}
+                  <a class="change-second-telephone-of-first-property hidden" href="9b-change-telephone">Change</a>
+              </td>
+              <td class="govuk-table__cell" style="width:100px">
+                  <a  class="delete-first-telephone-of-first-property hidden" href="9c-delete-first-telephone-of-first-property">Delete</a>
+                  {% if (data['add-second-telephone-to-first-property'] !== undefined) %}
+                    <br>
+                  {% endif %}
+                  <a  class="delete-second-telephone-of-first-property hidden" href="9c-delete-second-telephone-of-first-property">Delete</a>
+              </td>
+            </tr>
+        </tbody>
+
+      </table>
+      
+
+      <!-- ####################################################################################################-->
+      <!-- NEW TABLE HERE -->
+      <!-- ####################################################################################################-->
+
+
+
+
+
+
+
+
+
+
+      <p class="hidden max-number-alert-second-property">You can have up to 3 ways to contact you.</p>
+      <table class="govuk-table multi-property-table hidden">
+          <caption class="govuk-table__caption govuk-!-font-size-24">
+              {% if (data['address-selector-2'] !== undefined) %}
+                    {{ data['address-selector-2'] }}
+                  {% elif (data['titleNumber'] !== undefined) %}
+                    5 Clinton Street, Exeter EX4 1AX
+                  {% else %}
+                    {% if (data['address-line-1']) %}
+                      {{ data['address-line-1'] }},
+                    {% endif %}
+                    {% if (data['address-line-2']) %}
+                      {{ data['address-line-2'] }},
+                    {% endif %}
+                    {% if (data['address-town']) %}
+                      {{ data['address-town'] }},
+                    {% endif %}
+                    {% if (data['address-county']) %}
+                      {{ data['address-county'] }},
+                    {% endif %}
+                    {% if (data['address-postcode']) %}
+                      {{ data['address-postcode'] }},
+                    {% endif %}
+                  {% endif %}
+          </caption><br><br>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col" colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+              
+            <tr class="govuk-table__row" style="vertical-align:top">
+              <th class="govuk-table__header" scope="row" style="width:200px">Send fraud alerts to</th>
+              <td class="govuk-table__cell"> 
+                
+                  {% if (data['change-first-address-to-second-property'] !== undefined) %}
+                    {{ data['change-first-address-to-second-property'] }}  
+                  {% elif (data['first-address-to-second-property'] !== undefined) %}
+                    {{ data['first-address-to-second-property'] }}
+                  {% else %}
+                    1 Clinton Street, Exeter EX4 1AX
+                  {% endif %}
+                  <br>
+                  <a class="plus-add add-second-address-to-second-property" href="9a-add-new-address">+ Add new</a>
+                  <span class="second-address-for-second-property hidden">
+                    {% if (data['change-second-address-to-second-property'] !== undefined) %}
+                      {{ data['change-second-address-to-second-property'] }}
+                    {% else %}
+                      {{ data['second-address-to-second-property'] }}
+                    {% endif %}
+                  </span><br>
+                  <a class="plus-add add-third-address-to-second-property hidden" href="9a-add-new-address">+ Add new</a>
+                  <span class="third-address-for-second-property hidden">
+                    {% if (data['change-third-address-to-second-property'] !== undefined) %}
+                      {{ data['change-third-address-to-second-property'] }}
+                    {% else %}
+                      {{ data['third-address-to-second-property'] }}
+                    {% endif %}
+                  </span>
+                  
+              </td>
+              <td class="govuk-table__cell" style="width:100px">
+                <a  class="change-first-address-of-second-property" href="9b-change-address">Change</a>
+                <br>
+                <a  class="change-second-address-of-second-property hidden" href="9b-change-address">Change</a>
+                {% if (data['third-address-to-second-property'] !== undefined) %}
+                  <br>
+                {% endif %}
+                <a  class="change-third-address-of-second-property hidden" href="9b-change-address">Change</a>
+              </td>
+              <td class="govuk-table__cell" style="width:100px">
+                <br>
+                <a  class="delete-second-address-of-second-property hidden" href="9c-delete-second-address-of-second-property">Delete</a>
+                {% if (data['third-address-to-second-property'] !== undefined) %}
+                  <br>
+                {% endif %}
+                <a  class="delete-third-address-of-second-property hidden" href="9c-delete-third-address-of-second-property">Delete</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row email-row-second-row" style="vertical-align:top">
+              <th class="govuk-table__header" scope="row" style="width:200px">Email fraud alerts to</th>
+              <td class="govuk-table__cell">
+                  <a href="9a-add-new-email" class="add-first-email-to-second-property">+ Add new</a>
+                  {% if (data['change-first-email-of-second-property'] !== undefined) %}
+                    {{ data['change-first-email-of-second-property'] }} (private)<br>
+                  {% elif (data['add-first-email-to-second-property'] !== undefined) %}
+                    {{ data['add-first-email-to-second-property'] }} (private)<br>
+                  {% endif %}
+                    <a href="9a-add-new-email" class="add-second-email-to-second-property hidden">+ Add new</a>
+                  {% if (data['change-second-email-of-second-property'] !==undefined) %}
+                    {{ data['change-second-email-of-second-property'] }} (private)<br>
+                  {% elif (data['add-second-email-to-second-property'] !== undefined) %}
+                    {{ data['add-second-email-to-second-property'] }} (private)<br>
+                  {% endif %}
+              </td>
+              <td class="govuk-table__cell" style="width:100px">
+                  <a  class="change-first-email-of-second-property hidden" href="9b-change-email">Change</a>
+                  {% if (data['add-second-email-to-second-property'] !== undefined) %}
+                    <br>
+                  {% endif %}
+                  <a class="change-second-email-of-second-property hidden" href="9b-change-email">Change</a>
+              </td>
+              <td class="govuk-table__cell" style="width:100px">
+                  <a  class="delete-first-email-of-second-property hidden" href="9c-delete-first-email-of-second-property">Delete</a>
+                  {% if (data['addd-second-email-to-second-property'] !== undefined) %}
+                    <br>
+                  {% endif %}
+                  <a  class="delete-second-email-of-second-property hidden" href="9c-delete-second-email-of-second-property">Delete</a>
+              </td>
+            </tr>
+            <tr class="govuk-table__row phone-row-second-row" style="vertical-align:top">
+                <th class="govuk-table__header" scope="row" style="width:200px">Text fraud alerts to</th>
+                <td class="govuk-table__cell">
+                  <a href="9a-add-new-phone" class="add-first-telephone-to-second-property">+ Add new</a>
+                  {% if (data['change-first-telephone-of-second-property'] !== undefined) %}
+                    {{ data['change-first-telephone-of-second-property'] }} (private)<br>
+                  {% elif (data['add-first-telephone-to-second-property'] !== undefined) %}
+                    {{ data['add-first-telephone-to-second-property'] }} (private)<br>
+                  {% endif %}
+                    <a href="9a-add-new-phone" class="add-second-telephone-to-second-property hidden">+ Add new</a>
+                  {% if (data['change-second-telephone-of-second-property'] !==undefined) %}
+                    {{ data['change-second-telephone-of-second-property'] }} (private)<br>
+                  {% elif (data['add-second-telephone-to-second-property'] !== undefined) %}
+                    {{ data['add-second-telephone-to-second-property'] }} (private)<br>
+                  {% endif %}
+                </td>
+                <td class="govuk-table__cell" style="width:100px">
+                    <a  class="change-first-telephone-of-second-property hidden" href="9b-change-telephone">Change</a>
+                    {% if (data['add-second-telephone-to-second-property'] !== undefined) %}
+                      <br>
+                    {% endif %}
+                    <a class="change-second-telephone-of-second-property hidden" href="9b-change-telephone">Change</a>
+                </td>
+                <td class="govuk-table__cell" style="width:100px">
+                    <a  class="delete-first-telephone-of-second-property hidden" href="9c-delete-first-telephone-of-second-property">Delete</a>
+                    {% if (data['addd-second-telephone-to-second-property'] !== undefined) %}
+                      <br>
+                    {% endif %}
+                    <a  class="delete-second-telephone-of-second-property hidden" href="9c-delete-second-telephone-of-second-property">Delete</a>
+                </td>
+              </tr>
+          </tbody>
+  
+        </table>
+
+
+
+
+
+
+        <!-- #################################################################-->
+
+
+
+
+
+
+
+      <!-- <table class="govuk-table multi-property-table">
+          <caption class="govuk-table__caption govuk-!-font-size-24">
+              {% if (data['address-selector-2'] !== undefined) %}
+                {{ data['address-selector-2'] }}
+              {% elif (data['titleNumber'] !== undefined) %}
+                3 Clinton Street, Exeter EX4 1AX
+              {% else %}
+                {% if (data['address-line-1']) %}
+                  {{ data['address-line-1'] }},
+                {% endif %}
+                {% if (data['address-line-2']) %}
+                  {{ data['address-line-2'] }},
+                {% endif %}
+                {% if (data['address-town']) %}
+                  {{ data['address-town'] }},
+                {% endif %}
+                {% if (data['address-county']) %}
+                  {{ data['address-county'] }},
+                {% endif %}
+                {% if (data['address-postcode']) %}
+                  {{ data['address-postcode'] }},
+                {% endif %}
+              {% endif %}
+          </caption><br><br>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col" colspan="3">Contact details</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row" style="vertical-align:top">
+              <th class="govuk-table__header" scope="row" style="width:200px">Postal address</th>
+              <td class="govuk-table__cell">
+                  1 Clinton Street, Exeter EX4 1AX
+                  <br>
+                  <a class="plus-add" href="#">+ Add new</a>
+              </td>
+              <td class="govuk-table__cell" style="width:100px"><a href="#">Change</a></td>
+              <td class="govuk-table__cell" style="width:100px"></td>
+            </tr>
+            <tr class="govuk-table__row" style="vertical-align:top">
+              <th class="govuk-table__header" scope="row" style="width:200px">Email</th>
+              <td class="govuk-table__cell">
+                  email@email.com
+                  <br>
+                  <a href="#">+ Add new</a>
+              </td>
+              <td class="govuk-table__cell" style="width:100px"><a href="#">Change</a></td>
+              <td class="govuk-table__cell" style="width:100px"><a href="#">Delete</a></td>
+            </tr>
+            <tr class="govuk-table__row" style="vertical-align:top">
+              <th class="govuk-table__header" scope="row" style="width:200px">Telephone</th>
+              <td class="govuk-table__cell">
+                  <a href="#">+ Add new</a>
+              </td>
+              <td class="govuk-table__cell" style="width:100px"></td>
+              <td class="govuk-table__cell" style="width:100px"></td>
+            </tr>
+          </tbody>
+  
+        </table> -->
+
+<!-- <td class="govuk-table__cell"><a href="update-contact" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-single-property-button">Update</a></td> -->
+        <p><a href="10-confirmation" class="govuk-button govuk-!-margin-bottom-3">Save and continue</a></p>
+        <p><a href="8-contact-info">Cancel</a></p>
+
+    </div>
+
+  </div>
+  <script>
+      let multiplePropertyCheck = sessionStorage.getItem('multiplePropertyToAdd');
+      let multiPropertyTableExists = document.querySelector ('.multi-property-table');
+      console.log(multiplePropertyCheck);
+      if (multiplePropertyCheck === 'yes') {
+          document.querySelector('.multi-property-table').classList.remove('hidden');
+      }
+    </script>
+{% endblock %}

@@ -1,0 +1,106 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Property fraud: keep your home safe from fraudsters
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Update your title deed",
+        "href": "1-start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <p class="govuk-custom-guidance-text">Guidance</p>
+      <h1 class="govuk-heading-l">
+        Property fraud: keep your home safe from fraudsters
+      </h1>      
+
+      <div class="govuk-custom-guidance-definition-list">
+          <dl class="govuk-body">
+              <dt>
+                  From:
+              </dt>
+              <dd>
+                  <a href="#">HM Land Registry</a>
+              </dd>
+              <dt>
+                  First published:
+              </dt>
+              <dd>
+                  20 July 2018
+              </dd>
+              <dt>
+                  Last updated:
+              </dt>
+              <dd>
+                  23 July 2018
+              </dd>
+              <dt>
+                  Part of:
+              </dt>
+              <dd>
+                  <a href="#">Update your title deed</a>
+              </dd>
+          </dl>
+      </div>
+    </div>
+    
+    <div class="govuk-grid-column-full">
+            <br><br>
+        <h2 class="govuk-heading-m govuk-!-font-weight-regular govuk-custom-guidance-header">
+            How to protect your home
+        </h2>
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        <nav>
+            <h1 class="govuk-heading-s govuk-!-font-weight-regular">
+                Contents
+            </h1>
+            <ol class="gvouk-body govuk-custom-document-selections">
+                <li><a href="#section1">Update your title deed</a></li>
+                <li><a href="#section2">Check your title deed (&pound;3)</a></li>
+                <li><a href="#section3">Sign up for property alerts</a></li>
+            </ol>
+        </nav>
+    </div>
+    <div class="govuk-grid-column-three-quarters">
+        <p>You can take steps to protect your house, flat or commercial property from fraud.</p>
+        <p>This page explains how to check your online title deed, keep your contact details up to date, and sign up for fraud alerts.</p>
+        <h3 id="section1" class="govuk-heading-m">
+                Update your title deed
+            </h3>
+            <p>If HM Land Registry has your email, phone number or correspondence address, we can contact you if, for example, we suspect fraud on your property.</p>
+            <p>We will contact you whenever something changes on your title deed, for example if someone registers an interest in your property.</p>
+            <p><a href="1-start">Update your title deed</a> (this is a free service). You should update the contact details on your title deed every time you move or change your email or phone number. If you don’t, HM Land Registry can’t contact you if there is a change to your title deed. A change on your deed is usually the first sign of fraud.</p>
+        <h3 id="section2" class="govuk-heading-m">
+            Check your title deed (&pound;3)
+        </h3>
+        <p>HM Land Registry keeps a record of everyone who owns a property. These records (title deeds) are kept in an online register.</p>
+        <p>Property fraudsters often try to change the registered owner on a title deed, so they can sell or remortgage the property.</p>
+        <p>To keep your home safe, check your title deed to make sure you are named as the registered owner.</p>
+        <p><a href="https://www.gov.uk/search-property-information-land-registry">Check your online title deed</a> (this costs &pound;3). If your name is not on the deed, contact HM Land Registry: <span class="govuk-!-font-weight-bold">support@landregistry.gov.uk</span></p>
+        <h3 id="section3" class="govuk-heading-m">
+            Sign up for property alerts
+        </h3>
+        <p>Once you have checked your title deed and updated your contact details, you can also protect yourself against future fraud attempts.</p>
+        <p>HM Land Registry has a service called <span class="govuk-!-font-weight-bold">Property alerts</span>. You can <a href="https://www.gov.uk/guidance/property-alert">sign up to property alerts</a> and we will email you if something changes on your title deed.</p>
+        
+    </div>
+
+   
+  </div>
+{% endblock %}

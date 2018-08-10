@@ -1,0 +1,82 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Postcode of the property you own
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Update my title deed",
+        "href": "1-start"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">
+        Postcode (property you own)
+      </h1>
+      
+      <div class="govuk-custom-element-to-hide">
+        <form class="form" action="#" method="post">
+
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24" for="postcode">Postcode</label>
+            
+            <input class="govuk-input govuk-input--width-10" id="postcode" name="postcode" type="text">
+          </div>
+          <input class="govuk-button address-lookup-button" type="submit" value="Find address">
+          
+        </form>
+      </div>
+      <div class="govuk-custom-element-to-display hidden">
+        <h2 class="govuk-heading-m govuk-!-margin-bottom-1">Postcode</h2>
+        <p class="govuk-body"><span class="govuk-custom-data-to-display"></span><a href="#" class="govuk-custom-inline-link govuk-custom-revert-state">Change</a></p>
+        <form class="form postcode-selector" action="4a-confirm-address" method="post">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold govuk-!-font-size-24" for="address-selector">Choose an address</label>
+            <select class="govuk-select" id="address-selector" name="address-selector">
+              <option value="1 Clinton Street, Exeter EX4 1AX">1 Clinton Street, Exeter EX4 1AX</option>
+              <option value="2 Clinton Street, Exeter EX4 1AX">2 Clinton Street, Exeter EX4 1AX</option>
+              <option value="3 Clinton Street, Exeter EX4 1AX">3 Clinton Street, Exeter EX4 1AX</option>
+              <option value="4 Clinton Street, Exeter EX4 1AX">4 Clinton Street, Exeter EX4 1AX</option>
+              <option value="5 Clinton Street, Exeter EX4 1AX">5 Clinton Street, Exeter EX4 1AX</option>
+              <option value="6 Clinton Street, Exeter EX4 1AX">6 Clinton Street, Exeter EX4 1AX</option>
+              <option value="7 Clinton Street, Exeter EX4 1AX">7 Clinton Street, Exeter EX4 1AX</option>
+              <option value="8 Clinton Street, Exeter EX4 1AX">8 Clinton Street, Exeter EX4 1AX</option>
+            </select>
+          </div>
+          <input class="govuk-button" type="submit" value="Continue">
+        </form>
+        <p class="govuk-body"><a href="3b-manual-address-lookup">I can't find my address in the list</a></p>
+      </div>
+    </div>
+
+  </div>
+  
+  <script>
+    let multiplePropertyCheck = sessionStorage.getItem('multiplePropertyToAdd');
+    if (multiplePropertyCheck === 'yes') {
+      console.log('Multiple property is being added');
+      document.querySelector('.postcode-selector').setAttribute('action', '4a-confirm-address-2');
+      document.querySelector('#address-selector').setAttribute('name', 'address-selector-2')
+      let action = document.querySelector('.postcode-selector').getAttribute('action');
+      let name = document.querySelector('#address-selector').getAttribute('name');
+      console.log(action);
+      console.log(name);
+    } else  {
+      console.log('Single property is being added');
+    }
+  </script>
+{% endblock %}
