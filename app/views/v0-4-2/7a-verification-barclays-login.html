@@ -1,0 +1,130 @@
+<html lang="en">
+    <head>
+        <title>Barclays Identity Assurance</title>
+        <style>
+            #barclays-container {
+                margin: 2em auto;
+                width: 75%;
+                display: block;
+                font-family: sans-serif;
+            }
+
+            img {
+                width: 210px;
+            }
+            
+            h1,
+            h2 {
+                line-height: 1;
+                font-weight: lighter;
+                color: #00395D;
+            }
+
+            h1 {
+                font-size: 48px;
+            }
+
+            h2 {
+                font-size: 42px;
+            }
+
+            form div {
+                margin-bottom: 1em;
+            }
+
+            label {
+                margin-right: 8em;
+                font-size: 21px;
+                color: #00395D;
+            }
+
+            input {
+                padding: 1em;
+                width: 300px;
+                -webkit-appearance: none;
+                -moz-appearance: none;
+                -ms-appearance: none;
+                appearance: none;
+                border: 1px solid grey;
+                border-radius: 5px;
+            }
+
+            #password {
+                margin-left: 0.45em;
+            }
+
+            .buttons {
+                margin-top: 3em;
+                margin-left: 16.95em;
+            }
+
+            .buttons a {
+                margin-right: 1em;
+                padding: 1em;
+                border: 1px solid rgb(0,117,164);
+                border-radius: 5px;
+                text-decoration: none;
+                color: rgb(0,117,164);
+            }
+
+            a.continue {
+                background-color: rgb(0,117,164);
+                color: white;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div id="barclays-container">
+            <img src="/public/images/barclays-logo.png"> 
+            <h1>
+                Barclays Identity Assurance
+            </h1>
+            <form action="#">
+                    
+                <legend>
+                    <h2>
+                        Your digital identity
+                    </h2>
+                </legend>
+                <div>
+                    <label for="username">
+                        Username
+                    </label>
+                    <input id="username" name="barclaysSignIn" type="text">
+                </div>
+                <div>
+                    <label for="password">
+                        Password
+                    </label>
+                    <input id="password" name="barclaysSignIn" type="password">
+                </div>
+        
+            </form>
+            <div class="buttons">
+                <a href="verification-choose" type="submit" class="cancel">Cancel</a>
+                <a href="8-contact-info" type="submit" class="continue">Sign in</a>
+            </div>
+                
+            
+        </div>
+        <!-- <script>
+            let addressCheck = sessionStorage.getItem('propNumber');
+            let destination = document.querySelector('.continue');
+            destination.onclick = function() {
+                if (addressCheck === 'singleAddress') {
+                    destination.setAttribute('href', 'contact-info-single-address');
+                } else if (addressCheck === 'multiAddress') {
+                    destination.setAttribute('href', 'contact-info-multi-address');
+                }
+            }
+        </script> -->
+
+        <script>
+                let multiplePropertyCheck = sessionStorage.getItem('multiplePropertyToAdd');
+                console.log(multiplePropertyCheck);
+              </script>    
+    </body>
+</html>
+
+

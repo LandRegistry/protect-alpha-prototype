@@ -1,0 +1,181 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Check your contact details
+{% endblock %}
+
+{% block beforeContent %}
+  
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <h1 class="govuk-heading-l">
+        Check your contact details
+      </h1>
+      <p>HM Land Registry will use these to contact you if something changes on your property record, for example the property owner’s name.</p>
+      <p>If you do not live at this property, for example if you are a landlord, change the address to your home address (or any other address where you want to get postal alerts). This will not change the address you own (this is just a way for HM Land Registry to contact you).</p>
+
+      <table class="govuk-table">
+        <caption class="govuk-table__caption govuk-!-font-size-24">
+            {% if (data['address-selector'] !== undefined) %}
+                      {{ data['address-selector'] }}
+                    {% elif (data['titleNumber'] !== undefined) %}
+                      5 Clinton Street, Exeter EX4 1AX
+                    {% else %}
+                      {% if (data['address-line-1']) %}
+                        {{ data['address-line-1'] }},
+                      {% endif %}
+                      {% if (data['address-line-2']) %}
+                        {{ data['address-line-2'] }},
+                      {% endif %}
+                      {% if (data['address-town']) %}
+                        {{ data['address-town'] }},
+                      {% endif %}
+                      {% if (data['address-county']) %}
+                        {{ data['address-county'] }},
+                      {% endif %}
+                      {% if (data['address-postcode']) %}
+                        {{ data['address-postcode'] }},
+                      {% endif %}
+                    {% endif %}
+        </caption>
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th class="govuk-table__header" scope="col"></th>
+            <th class="govuk-table__header" scope="col" colspan="3"></th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+            
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row" style="width:200px">Post alerts</th>
+            <td class="govuk-table__cell">
+                5 Clinton Street, Exeter EX4 1AX
+                <br>
+                <a class="plus-add add-second-address-to-first-property" href="9a-add-new-address">+ Add new</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px"><a class="change-first-address-of-first-property" href="9b-change-address">Change</a></td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+          </tr>
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row" style="width:200px">Email alerts</th>
+            <td class="govuk-table__cell">
+                <a href="9a-add-new-email" class="add-first-email-to-first-property">+ Add new</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+          </tr>
+          <tr class="govuk-table__row" style="vertical-align:top">
+            <th class="govuk-table__header" scope="row" style="width:200px">Text alerts </th>
+            <td class="govuk-table__cell">
+                <a href="9a-add-new-phone" class="add-first-telephone-to-first-property">+ Add new</a>
+            </td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+            <td class="govuk-table__cell" style="width:100px"></td>
+          </tr>
+        </tbody>
+
+      </table>
+
+      <table class="govuk-table multi-property-table hidden">
+          <caption class="govuk-table__caption govuk-!-font-size-24">
+              {% if (data['address-selector-2'] !== undefined) %}
+                {{ data['address-selector-2'] }}
+              {% elif (data['titleNumber'] !== undefined) %}
+                5 Clinton Street, Exeter EX4 1AX
+              {% else %}
+                {% if (data['address-line-1']) %}
+                  {{ data['address-line-1'] }},
+                {% endif %}
+                {% if (data['address-line-2']) %}
+                  {{ data['address-line-2'] }},
+                {% endif %}
+                {% if (data['address-town']) %}
+                  {{ data['address-town'] }},
+                {% endif %}
+                {% if (data['address-county']) %}
+                  {{ data['address-county'] }},
+                {% endif %}
+                {% if (data['address-postcode']) %}
+                  {{ data['address-postcode'] }},
+                {% endif %}
+              {% endif %}
+          </caption><br><br>
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th class="govuk-table__header" scope="col"></th>
+              <th class="govuk-table__header" scope="col" colspan="3"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            
+            <tr class="govuk-table__row" style="vertical-align:top">
+              <th class="govuk-table__header" scope="row" style="width:200px">Post alerts</th>
+              <td class="govuk-table__cell">
+                  1 Clinton Street, Exeter EX4 1AX
+                  <br>
+                  <a class="plus-add add-second-address-to-second-property" href="9a-add-new-address">+ Add new</a>
+              </td>
+              <td class="govuk-table__cell" style="width:100px"><a class="change-first-address-of-second-property" href="9b-change-address">Change</a></td>
+              <td class="govuk-table__cell" style="width:100px"></td>
+            </tr>
+            <tr class="govuk-table__row" style="vertical-align:top">
+              <th class="govuk-table__header" scope="row" style="width:200px">Email alerts</th>
+              <td class="govuk-table__cell">
+                  <a href="9a-add-new-email" class="add-first-email-to-second-property">+ Add new</a>
+              </td>
+              <td class="govuk-table__cell" style="width:100px"></td>
+              <td class="govuk-table__cell" style="width:100px"></td>
+            </tr>
+            <tr class="govuk-table__row" style="vertical-align:top">
+              <th class="govuk-table__header" scope="row" style="width:200px">Text alerts</th>
+              <td class="govuk-table__cell">
+                  <a href="9a-add-new-phone" class="add-first-telephone-to-second-property">+ Add new</a>
+              </td>
+              <td class="govuk-table__cell" style="width:100px"></td>
+              <td class="govuk-table__cell" style="width:100px"></td>
+            </tr>
+          </tbody>
+  
+        </table>
+
+<!-- <td class="govuk-table__cell"><a href="update-contact" class="govuk-button govuk-!-margin-bottom-1 govuk-custom-update-single-property-button">Update</a></td> -->
+      
+      <p>If your contact details are up to date, you can <a href="https://gov.uk">exit the service</a> or <a href="2-title-number">search another property</a>.</p>
+      <h2 class="govuk-heading-m">  
+      I suspect fraud on my property record
+      </h2>
+      <p>If your contact details are wrong and you do not recognise them contact HM Land Registry.</p>
+      <dl class="govuk-custom-contact-dl govuk-body">
+        <dt class="govuk-!-font-weight-bold">
+            Telephone
+        </dt>
+        <dd>
+            0300 006 6000
+        </dd>
+        <dt class="govuk-!-font-weight-bold">
+            Email
+        </dt>
+        <dd style="margin-bottom:1em">
+            support@landregistry.gov.uk
+        </dd>
+        
+    </dl>
+
+    </div>
+
+  </div>
+  <script>
+    let multiplePropertyCheck = sessionStorage.getItem('multiplePropertyToAdd');
+    let multiPropertyTableExists = document.querySelector ('.multi-property-table');
+    console.log(multiplePropertyCheck);
+    if (multiplePropertyCheck === 'yes' && multiPropertyTableExists !== null) {
+        document.querySelector('.multi-property-table').classList.remove('hidden');
+    }
+  </script>
+  
+{% endblock %}

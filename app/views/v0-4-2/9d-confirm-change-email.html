@@ -1,0 +1,98 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm changes
+{% endblock %}
+
+{% block beforeContent %}
+  
+{% endblock %}
+
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-l">
+      Confirm your new contact details
+    </h1>
+    <dl class="app-check-your-answers app-check-your-answers--short">
+      <div class="app-check-your-answers__contents">
+        <dt class="app-check-your-answers__question">
+        Email alerts
+        </dt>
+        <dd class="app-check-your-answers__answer first-email-to-first-property hidden">
+            {% if (data['change-first-email-of-first-property'] !== undefined) %}
+                {{ data['change-first-email-of-first-property'] }}
+            {% elif (data['add-first-email-to-first-property'] !== undefined) %}
+                {{ data['add-first-email-to-first-property'] }}
+            {% endif %}
+        </dd>
+        <dd class="app-check-your-answers__answer second-email-to-first-property hidden">
+            {% if (data['change-second-email-of-first-property'] !== undefined) %}
+                {{ data['change-second-email-of-first-property'] }}
+            {% elif (data['add-second-email-to-first-property'] !== undefined) %}
+                {{ data['add-second-email-to-first-property'] }}
+            {% endif %}
+        </dd>
+        <dd class="app-check-your-answers__answer third-email-to-first-property hidden">
+            {% if (data['change-third-email-of-first-property'] !== undefined) %}
+                {{ data['change-third-email-of-first-property'] }}
+            {% elif (data['add-third-email-to-first-property']!== undefined) %}
+                {{ data['add-third-email-to-first-property'] }}
+            {% endif %}
+        </dd>
+        <dd class="app-check-your-answers__answer first-email-to-second-property hidden">
+            {% if (data['change-first-email-of-second-property'] !== undefined) %}
+                {{ data['change-first-email-of-second-property'] }}
+            {% elif (data['add-first-email-to-second-property']!== undefined) %}
+                {{ data['add-first-email-to-second-property'] }}
+            {% endif %}
+        </dd>
+        <dd class="app-check-your-answers__answer second-email-to-second-property hidden">
+            {% if (data['change-second-email-of-second-property'] !== undefined) %}
+                {{ data['change-second-email-of-second-property'] }}
+            {% elif (data['add-second-email-to-second-property']!== undefined) %}
+                {{ data['add-second-email-to-second-property'] }}
+            {% endif %}
+        </dd>
+        <dd class="app-check-your-answers__answer third-email-to-second-property hidden">
+            {% if (data['change-third-email-of-second-property'] !== undefined) %}
+                {{ data['change-third-email-of-second-property'] }}
+            {% elif (data['add-third-email-to-second-property']!== undefined) %}
+                {{ data['add-third-email-to-second-property'] }}
+            {% endif %}
+        </dd>
+        <dd class="app-check-your-answers__change">
+            <a href="9a-add-new-address">
+                Change<span class="govuk-visually-hidden"> email</span>
+            </a>
+        </dd>
+      </div>
+     </dl>
+     
+    <p><a href="8a-contact-info-updated" type="submit" class="govuk-button" id="email-change-button">Confirm</a></p>
+    <p><a href="#">Cancel changes</a></p>
+  </div>
+
+</div>
+<script>
+    let itemToAddCheck = sessionStorage.getItem('item-to-update');
+    console.log(itemToAddCheck);
+    if (itemToAddCheck === 'change second email of first property') {
+        document.querySelector('.second-email-to-first-property').classList.remove('hidden');
+    } else if (itemToAddCheck === 'change first email of first property') {
+        document.querySelector('.first-email-to-first-property').classList.remove('hidden');
+    } else if (itemToAddCheck === 'change third email of first property') {
+        document.querySelector('.third-email-to-first-property').classList.remove('hidden');
+    } else if (itemToAddCheck === 'change first email of second property') {
+        document.querySelector('.first-email-to-second-property').classList.remove('hidden');
+    } else if (itemToAddCheck === 'change second email of second property') {
+        document.querySelector('.second-email-to-second-property').classList.remove('hidden');
+    } else if (itemToAddCheck === 'change third email of second property') {
+        document.querySelector('.third-email-to-second-property').classList.remove('hidden');
+    }
+</script>
+
+{% endblock %}
+

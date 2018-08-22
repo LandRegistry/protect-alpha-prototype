@@ -1,0 +1,59 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Verification
+{% endblock %}
+
+{% block beforeContent %}
+  
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <div class="govuk-custom-verify-box">
+        <div class="govuk-custom-verify-box-item govuk-custom-verify-icon">
+            <img src="/public/images/govuk-verify-logo.png">
+        </div>
+        <div class="govuk-custom-verify-box-item govuk-custom-verify-blurb">
+            <form id="govuk-custom-verification-form" class="form" action="6b-verification-intro" method="get">
+                <div class="govuk-form-group">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                        <h1 class="govuk-fieldset__heading">
+                            Sign in with GOV.UK Verify
+                        </h1>
+                        </legend>
+                        <div class="govuk-radios">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="first-time-user" name="signIn" type="radio" value="This is my first time using Verify">
+                                <label class="govuk-label govuk-radios__label" for="first-time-user">
+                                    This is my first time using Verify
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="used-before" name="signIn" type="radio" value="I've used Verify before">
+                                <label class="govuk-label govuk-radios__label" for="used-before">
+                                    I've used Verify before
+                                </label>
+                            </div>
+                        </div>
+                    </fieldset>
+                </div>
+                <input id="verify-button" class="govuk-button" type="submit" value="Continue">
+            </form>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+  <script>
+        let multiplePropertyCheck = sessionStorage.getItem('multiplePropertyToAdd');
+        console.log(multiplePropertyCheck);
+    </script>
+{% endblock %}

@@ -1,0 +1,79 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Change email
+{% endblock %}
+
+{% block beforeContent %}
+  
+{% endblock %}
+
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Who do you have an identity account with?</h1>
+        <p>If you don't have an identity account, you can <a href="#">start now</a>.</p>
+    </div>
+    <div class="govuk-grid-column-full">
+        <div class="govuk-custom-verify-choice-boxes">
+            <div class="govuk-custom-verify-choice-box">
+                <div>
+                    <img src="/public/images/citizensafe-logo.png">
+                </div>
+                <br>
+                <a href="#" type="submit" class="govuk-button">Select CitizenSafe</a>
+            </div>
+            <div class="govuk-custom-verify-choice-box">
+                <div>
+                    <img class="barclays" src="/public/images/barclays-logo.png">
+                </div>
+                <br>
+                <a href="7a-verification-barclays-login" type="submit" class="govuk-button">Select Barclays</a>
+            </div>
+            <div class="govuk-custom-verify-choice-box">
+                <div>
+                    <img src="/public/images/post-office-logo.png">
+                </div>
+                <br>
+                <a href="7b-verification-post-office-login" type="submit" class="govuk-button">Select Post Office</a>
+            </div>
+            <div class="govuk-custom-verify-choice-box">
+                <div>
+                    <img src="/public/images/royal-mail-logo.png">
+                </div>
+                <br>
+                <a href="#" type="submit" class="govuk-button">Select Royal Mail</a>
+            </div>
+            <div class="govuk-custom-verify-choice-box">
+                <div>
+                    <img src="/public/images/experian-logo.png">
+                </div>
+                <br>
+                <a href="#" type="submit" class="govuk-button">Select Experian</a>
+            </div>
+            <div class="govuk-custom-verify-choice-box">
+                <div>
+                    <img src="/public/images/digidentity-logo.png">
+                </div>
+                <br>
+                <a href="#" type="submit" class="govuk-button">Select Digindentity</a>
+            </div>
+            <div class="govuk-custom-verify-choice-box">
+                <div>
+                    <img src="/public/images/secureidentity-logo.png">
+                </div>
+                <br>
+                <a href="#" type="submit" class="govuk-button">Select SecureIdentity</a>
+            </div>
+        </div>
+      
+    </div>
+
+  </div>
+  <script>
+        let multiplePropertyCheck = sessionStorage.getItem('multiplePropertyToAdd');
+        console.log(multiplePropertyCheck);
+    </script>
+{% endblock %}
+
