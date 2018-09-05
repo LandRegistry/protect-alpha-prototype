@@ -5,7 +5,18 @@
 {% endblock %}
 
 {% block beforeContent %}
-  
+  {{ govukBreadcrumbs({
+    "items": [
+      {
+        "text": "Version history",
+        "href": "/"
+      },
+      {
+        "text": "Update my title deed",
+        "href": "1-start"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 
@@ -16,7 +27,8 @@
       <h1 class="govuk-heading-l">
         Contact details
       </h1>
-     
+      
+      <p>Confirm your updated contact details with HM Land Registry.</p>
       
       <p class="hidden max-number-alert">You can have up to 3 ways to contact you.</p>
       <table class="govuk-table">
@@ -52,7 +64,7 @@
         <tbody class="govuk-table__body">
             
           <tr class="govuk-table__row" style="vertical-align:top">
-            <th class="govuk-table__header" scope="row" style="width:200px">Postal alerts</th>
+            <th class="govuk-table__header" scope="row" style="width:200px">Post alerts to</th>
             <td class="govuk-table__cell">
               {% if (data['change-first-address-to-first-property'] !== undefined) %}
                 {{ data['change-first-address-to-first-property'] }}
@@ -99,7 +111,7 @@
             </td>
           </tr>
           <tr class="govuk-table__row email-row" style="vertical-align:top">
-            <th class="govuk-table__header" scope="row" style="width:200px">Email alerts</th>
+            <th class="govuk-table__header" scope="row" style="width:200px">Email alerts to</th>
             <td class="govuk-table__cell">
               <a href="9a-add-new-email" class="add-first-email-to-first-property">+ Add new</a>
               {% if (data['change-first-email-of-first-property'] !== undefined) %}
@@ -130,7 +142,7 @@
             </td>
           </tr>
           <tr class="govuk-table__row phone-row" style="vertical-align:top">
-              <th class="govuk-table__header" scope="row" style="width:200px">Text alerts</th>
+              <th class="govuk-table__header" scope="row" style="width:200px">Text alerts to</th>
               <td class="govuk-table__cell">
                 <a href="9a-add-new-phone" class="add-first-telephone-to-first-property">+ Add new</a>
                 {% if (data['change-first-telephone-of-first-property'] !== undefined) %}
@@ -212,7 +224,7 @@
           <tbody class="govuk-table__body">
               
             <tr class="govuk-table__row" style="vertical-align:top">
-              <th class="govuk-table__header" scope="row" style="width:200px">Post alerts</th>
+              <th class="govuk-table__header" scope="row" style="width:200px">Post alerts to</th>
               <td class="govuk-table__cell"> 
                 
                   {% if (data['change-first-address-to-second-property'] !== undefined) %}
@@ -260,7 +272,7 @@
               </td>
             </tr>
             <tr class="govuk-table__row email-row-second-row" style="vertical-align:top">
-              <th class="govuk-table__header" scope="row" style="width:200px">Email alerts</th>
+              <th class="govuk-table__header" scope="row" style="width:200px">Email fraud alerts to</th>
               <td class="govuk-table__cell">
                   <a href="9a-add-new-email" class="add-first-email-to-second-property">+ Add new</a>
                   {% if (data['change-first-email-of-second-property'] !== undefined) %}
@@ -291,7 +303,7 @@
               </td>
             </tr>
             <tr class="govuk-table__row phone-row-second-row" style="vertical-align:top">
-                <th class="govuk-table__header" scope="row" style="width:200px">Text alerts</th>
+                <th class="govuk-table__header" scope="row" style="width:200px">Text fraud alerts to</th>
                 <td class="govuk-table__cell">
                   <a href="9a-add-new-phone" class="add-first-telephone-to-second-property">+ Add new</a>
                   {% if (data['change-first-telephone-of-second-property'] !== undefined) %}
