@@ -163,7 +163,7 @@ router.get('/v0-4-2/3b-title-number-entry', function (req, res) {
   var titleExists = req.query.title
 
   if (titleExists === 'no') {
-    res.redirect('3a-address-lookup')
+    res.redirect('3b-manual-address-lookup')
   } else {
     res.render('v0-4-2/3b-title-number-entry')
   }
