@@ -11,4 +11,5 @@ govuk_modules
 .tmuxp.*
 package-lock.json
 app/assets/getaddress.js
+app/notify.js
 
